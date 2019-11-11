@@ -15,4 +15,8 @@ RSpec.describe Comida do
 	it "Existe atributo proteina" do
 		expect(p).to respond_to(:get_proteina)
 	end
+	
+	it "Existe atributo Carbohidratos" do
+		expect(p).to respond_to(:get_carbohidratos)
+	end
 end
