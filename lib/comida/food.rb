@@ -7,5 +7,9 @@ module Comida
 		def get_nombre
 		
 		end
+		
+		def get_proteina
+		
+		end
 	end
 end
