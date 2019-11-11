@@ -1,12 +1,18 @@
 require "spec_helper.rb"
 
 RSpec.describe Comida do
-  it "has a version number" do
-    expect(Comida::VERSION).not_to be nil
-  end
+	
+	p = Comida::Comida.new
+	
+	it "has a version number" do
+		expect(Comida::VERSION).not_to be nil
+	end
 
 	it "Existe nombre alimento" do
-		p = Comida::Comida.new
 		expect(p).to respond_to(:get_nombre)
+	end
+
+	it "Existe atributo proteina" do
+		expect(p).to respond_to(:get_proteina)
 	end
 end
