@@ -1,3 +1,17 @@
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Asignatura: Lenguajes y Paradigmas de la Programación (LPP)
+Curso: 3º 
+Práctica 6 LPP - Desarrollo Dirigido por Pruebas (TDD)
+Autor: Christian Torres GOnzalez
+Correo: alu0101137902@ull.es
+Fecha: 24/10/2019
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+
 # Comida
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/comida`. To experiment with that code, run `bin/console` for an interactive prompt.
