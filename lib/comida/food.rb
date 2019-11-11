@@ -11,5 +11,9 @@ module Comida
 		def get_proteina
 		
 		end
+		
+		def get_carbohidratos
+		
+		end
 	end
 end
