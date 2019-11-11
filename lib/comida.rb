@@ -1,4 +1,5 @@
 require "comida/version"
+require "comida/food.rb"
 
 module Comida
   class Error < StandardError; end
