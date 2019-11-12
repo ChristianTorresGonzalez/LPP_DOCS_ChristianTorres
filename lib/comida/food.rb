@@ -7,6 +7,7 @@ module Comida
 			@nombre = name
 			@proteina = protein
 			@carbohidratos = carbo
+			@lipidos = lipido
 		end
 		
 	end
