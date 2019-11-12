@@ -12,6 +12,10 @@ module Comida
 			@terreno = t
 		end
 		
+		def to_s
+			"(#{@nombre}, #{@proteinas}, #{@carbohidratos}, #{@lipidos}, #{gei}, #{terreno})"
+		end
+		
 		def calculo_valor_energetico
 			(@carbohidratos*4) + (@lipidos*9) + (@proteinas*4)
 		end		

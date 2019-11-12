@@ -8,6 +8,7 @@ RSpec.describe Comida do
 	l = 1.4
 	g = 0.4
 	t = 3.4
+	a = "(Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4)"
 	p = Comida::Comida.new(n,pro,c,l,g,t)
 	
 	it "has a version number" do
@@ -68,6 +69,14 @@ RSpec.describe Comida do
 	
 	it "Calculo valor energetico" do
 		expect(p.calculo_valor_energetico).to eq(314.6)
+	end
+	
+	it "Retorno alimento formateado" do
+		expect(p).to respond_to(:to_s)
+	end
+	
+	it "Retorno alimento formateado" do
+		expect(p.to_s).to eq(a)
 	end
 	
 end
