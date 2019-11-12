@@ -8,6 +8,7 @@ module Comida
 			@proteina = protein
 			@carbohidratos = carbo
 			@lipidos = lipido
+			@gei = g
 		end
 		
 	end
