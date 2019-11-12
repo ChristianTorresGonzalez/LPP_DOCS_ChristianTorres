@@ -6,6 +6,7 @@ module Comida
 		def initialize(name, protein, carbo)
 			@nombre = name
 			@proteina = protein
+			@carbohidratos = carbo
 		end
 		
 	end
