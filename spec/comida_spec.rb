@@ -7,7 +7,8 @@ RSpec.describe Comida do
 	c = 3.1
 	l = 5.9
 	g = 7
-	p = Comida::Comida.new(n,pro,c,l,g)
+	t = 1000.325
+	p = Comida::Comida.new(n,pro,c,l,g,t)
 	
 	it "has a version number" do
 		expect(Comida::VERSION).not_to be nil
@@ -56,5 +57,8 @@ RSpec.describe Comida do
 	it "Retorno atributo gei" do
 		expect(p.gei).to eq(g)
 	end
-	
+
+	it "Retorno atributo terreno" do
+		expect(p.terreno).to eq(t)
+	end
 end
