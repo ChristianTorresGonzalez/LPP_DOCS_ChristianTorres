@@ -9,6 +9,7 @@ module Comida
 			@carbohidratos = carbo
 			@lipidos = lipido
 			@gei = g
+			@terreno = t
 		end
 		
 	end
