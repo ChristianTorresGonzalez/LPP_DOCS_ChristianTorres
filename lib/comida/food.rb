@@ -19,5 +19,9 @@ module Comida
 		def calculo_valor_energetico
 			(@carbohidratos*4) + (@lipidos*9) + (@proteinas*4)
 		end		
+		
+		def impacto_ambiental_hombre
+		
+		end
 	end
 end

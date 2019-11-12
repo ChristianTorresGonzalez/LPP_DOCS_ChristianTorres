@@ -79,4 +79,8 @@ RSpec.describe Comida do
 		expect(p.to_s).to eq(a)
 	end
 	
+	it "Calculo impacto_ambiental_hombre" do
+		expect(p).to respond_to(:impacto_ambiental_hombre)
+	end
+	
 end
