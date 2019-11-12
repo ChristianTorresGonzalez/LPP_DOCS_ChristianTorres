@@ -3,7 +3,7 @@ module Comida
 		
 		attr_reader :nombre, :proteina, :carbohidratos, :lipidos, :gei, :terreno
 		
-		def initialize(name, protein)
+		def initialize(name, protein, carbo)
 			@nombre = name
 			@proteina = protein
 		end
