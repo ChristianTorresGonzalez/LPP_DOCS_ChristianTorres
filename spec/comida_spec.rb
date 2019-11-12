@@ -3,9 +3,10 @@ require "spec_helper.rb"
 RSpec.describe Comida do
 	
 	n = "pepe"
-	pro = "full"
+	pro = 2.5
 	c = 3.1
-	p = Comida::Comida.new(n,pro,c)
+	l = 5.9
+	p = Comida::Comida.new(n,pro,c,l)
 	
 	it "has a version number" do
 		expect(Comida::VERSION).not_to be nil
@@ -47,5 +48,8 @@ RSpec.describe Comida do
 		expect(p.carbohidratos).to eq(c)
 	end
 	
+	it "Retorno atributo lipidos" do
+		expect(p.lipidos).to eq(l)
+	end
 	
 end
