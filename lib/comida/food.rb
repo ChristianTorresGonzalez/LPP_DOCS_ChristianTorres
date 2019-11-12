@@ -1,11 +1,11 @@
 module Comida
 	class Comida
 		
-		attr_reader :nombre, :proteina, :carbohidratos, :lipidos, :gei, :terreno
+		attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
 		
 		def initialize(name, protein, carbo, lipido, g, t)
 			@nombre = name
-			@proteina = protein
+			@proteinas = protein
 			@carbohidratos = carbo
 			@lipidos = lipido
 			@gei = g
@@ -13,8 +13,7 @@ module Comida
 		end
 		
 		def calculo_valor_energetico
-		
-		end
-		
+			(@carbohidratos*4) + (@lipidos*9) + (@proteinas*4)
+		end		
 	end
 end

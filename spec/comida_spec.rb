@@ -2,12 +2,12 @@ require "spec_helper.rb"
 
 RSpec.describe Comida do
 	
-	n = "pepe"
-	pro = 2.5
-	c = 3.1
-	l = 5.9
-	g = 7
-	t = 1000.325
+	n = "Lentejas"
+	pro = 23.5
+	c = 52.0
+	l = 1.4
+	g = 0.4
+	t = 3.4
 	p = Comida::Comida.new(n,pro,c,l,g,t)
 	
 	it "has a version number" do
@@ -19,7 +19,7 @@ RSpec.describe Comida do
 	end
 
 	it "Existe atributo proteina" do
-		expect(p).to respond_to(:proteina)
+		expect(p).to respond_to(:proteinas)
 	end
 	
 	it "Existe atributo Carbohidratos" do
@@ -43,7 +43,7 @@ RSpec.describe Comida do
 	end
 
 	it "Retorno atributo proteina" do
-		expect(p.proteina).to eq(pro)
+		expect(p.proteinas).to eq(pro)
 	end
 	
 	it "Retorno atributo Carbohidratos" do
@@ -65,4 +65,9 @@ RSpec.describe Comida do
 	it "Calculo valor energetico" do
 		expect(p).to respond_to(:calculo_valor_energetico)
 	end
+	
+	it "Calculo valor energetico" do
+		expect(p.calculo_valor_energetico).to eq(314.6)
+	end
+	
 end
