@@ -27,5 +27,8 @@ RSpec.describe Comida do
 	it "Existe atributo gei" do
 		expect(p).to respond_to(:gei)
 	end
-		
+
+	it "Existe atributo gei" do
+		expect(p).to respond_to(:terreno)
+	end
 end
