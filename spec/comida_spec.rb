@@ -61,4 +61,8 @@ RSpec.describe Comida do
 	it "Retorno atributo terreno" do
 		expect(p.terreno).to eq(t)
 	end
+	
+	it "Calculo valor energetico" do
+		expect(p).to respond_to(:calculo_valor_energetico)
+	end
 end
