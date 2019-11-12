@@ -12,5 +12,9 @@ module Comida
 			@terreno = t
 		end
 		
+		def calculo_valor_energetico
+		
+		end
+		
 	end
 end
