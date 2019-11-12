@@ -4,7 +4,7 @@ RSpec.describe Comida do
 	
 	n = "pepe"
 	pro = "full"
-	p = Comida::Comida.new(n)
+	p = Comida::Comida.new(n,pro)
 	
 	it "has a version number" do
 		expect(Comida::VERSION).not_to be nil
