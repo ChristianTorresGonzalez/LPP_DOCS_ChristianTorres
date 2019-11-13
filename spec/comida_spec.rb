@@ -10,6 +10,10 @@ RSpec.describe Comida do
 	t = 3.4
 	a = "(Lentejas, 23.5, 52.0, 1.4, 0.4, 3.4)"
 	p = Comida::Comida.new(n,pro,c,l,g,t)
+	croquetas = Comida::Comida.new(n,pro,c,l,g,t)
+	lasaña = Comida::Comida.new(n,pro,c,l,g,t)
+	pollo = Comida::Comida.new(n,pro,c,l,g,t)
+	value = [croquetas,lasaña,pollo]
 	
 	it "has a version number" do
 		expect(Comida::VERSION).not_to be nil
@@ -83,4 +87,15 @@ RSpec.describe Comida do
 		expect(p).to respond_to(:impacto_ambiental_hombre)
 	end
 	
+	it "Calculo impacto_ambiental_hombre con ejemplo" do
+		expect(p.impacto_ambiental_hombre(value)).to eq([1.2000000000000002,10.2])
+	end
+
+	it "Calculo impacto_ambiental_mujer con ejemplo" do
+		expect(p.impacto_ambiental_mujer(value)).to eq([1.2000000000000002,10.2])
+	end
+	
+	it "Calculo impacto_ambiental_mujer con ejemplo" do
+		expect(p.impacto_ambiental_mujer(value)).to eq([1.2000000000000002,10.2])
+	end
 end
