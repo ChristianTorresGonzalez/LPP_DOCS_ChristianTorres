@@ -36,6 +36,23 @@ module Comida
 			#puts "Impacto ambiental:  #{impacto_ambiental}"
 			#puts "Impacto del terreno:  #{impacto_terreno}"
 		end
+		
+		def impacto_ambiental_mujer(value)
+			i = 0
+			impacto_ambiental = 0.0
+			impacto_terreno = 0.0
+			
+			while i < value.length
+				impacto_ambiental += value[i].gei
+				impacto_terreno += value[i].terreno
+				i += 1
+			end
+			
+			salida  = [impacto_ambiental, impacto_terreno]
+			
+			#puts "Impacto ambiental:  #{impacto_ambiental}"
+			#puts "Impacto del terreno:  #{impacto_terreno}"
+		end
 			
 			#cantidad = []
 						
