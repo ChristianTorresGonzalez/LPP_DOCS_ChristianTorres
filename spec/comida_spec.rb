@@ -1,7 +1,7 @@
 require "spec_helper.rb"
 
 RSpec.describe Comida do
-	
+
 	n = "Lentejas"
 	pro = 23.5
 	c = 52.0
@@ -14,7 +14,7 @@ RSpec.describe Comida do
 	lasaña = Comida::Comida.new(n,pro,c,l,g,t)
 	pollo = Comida::Comida.new(n,pro,c,l,g,t)
 	value = [croquetas,lasaña,pollo]
-	
+
 	it "has a version number" do
 		expect(Comida::VERSION).not_to be nil
 	end
@@ -26,15 +26,15 @@ RSpec.describe Comida do
 	it "Existe atributo proteina" do
 		expect(p).to respond_to(:proteinas)
 	end
-	
+
 	it "Existe atributo Carbohidratos" do
 		expect(p).to respond_to(:carbohidratos)
 	end
-	
+
 	it "Existe atributo Lipidos" do
 		expect(p).to respond_to(:lipidos)
 	end
-	
+
 	it "Existe atributo gei" do
 		expect(p).to respond_to(:gei)
 	end
@@ -42,7 +42,7 @@ RSpec.describe Comida do
 	it "Existe atributo gei" do
 		expect(p).to respond_to(:terreno)
 	end
-	
+
 	it "Retorno atributo nombre" do
 		expect(p.nombre).to eq(n)
 	end
@@ -50,15 +50,15 @@ RSpec.describe Comida do
 	it "Retorno atributo proteina" do
 		expect(p.proteinas).to eq(pro)
 	end
-	
+
 	it "Retorno atributo Carbohidratos" do
 		expect(p.carbohidratos).to eq(c)
 	end
-	
+
 	it "Retorno atributo lipidos" do
 		expect(p.lipidos).to eq(l)
 	end
-	
+
 	it "Retorno atributo gei" do
 		expect(p.gei).to eq(g)
 	end
@@ -66,27 +66,27 @@ RSpec.describe Comida do
 	it "Retorno atributo terreno" do
 		expect(p.terreno).to eq(t)
 	end
-	
+
 	it "Calculo valor energetico" do
 		expect(p).to respond_to(:calculo_valor_energetico)
 	end
-	
+
 	it "Calculo valor energetico" do
 		expect(p.calculo_valor_energetico).to eq(314.6)
 	end
-	
+
 	it "Retorno alimento formateado" do
 		expect(p).to respond_to(:to_s)
 	end
-	
+
 	it "Retorno alimento formateado" do
 		expect(p.to_s).to eq(a)
 	end
-	
+
 	it "Calculo impacto_ambiental_hombre" do
 		expect(p).to respond_to(:impacto_ambiental_hombre)
 	end
-	
+
 	it "Calculo impacto_ambiental_hombre con ejemplo" do
 		expect(p.impacto_ambiental_hombre(value)).to eq([1.2000000000000002,10.2])
 	end
@@ -94,8 +94,18 @@ RSpec.describe Comida do
 	it "Calculo impacto_ambiental_mujer con ejemplo" do
 		expect(p.impacto_ambiental_mujer(value)).to eq([1.2000000000000002,10.2])
 	end
-	
+
 	it "Calculo impacto_ambiental_mujer con ejemplo" do
 		expect(p.impacto_ambiental_mujer(value)).to eq([1.2000000000000002,10.2])
+	end
+end
+
+
+RSpec.describe Comida::Lista do
+	context "Creacion de clase Lista" do
+		it "Prueba creacion de clase" do
+			l = Comida::Lista.new
+			expect(l).not_to be(nil)
+		end
 	end
 end
