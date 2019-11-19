@@ -119,5 +119,9 @@ RSpec.describe Comida::Lista do
 		it "Prueba metodo push_back" do
 			expect(l).to respond_to(:insert_tail)
 		end
+
+		it "Prueba metodo insert_head" do
+			expect(l).to respond_to(:insert_head)
+		end
 	end
 end
