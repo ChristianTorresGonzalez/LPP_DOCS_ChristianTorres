@@ -42,5 +42,14 @@ module Comida
          i += 1
        end
      end
+
+     def insert_muchos_tail(valores)
+       i = 0
+
+       while i < value.length
+         insert_tail(value[i])
+         i += 1
+       end
+     end
    end
 end
