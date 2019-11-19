@@ -114,4 +114,10 @@ RSpec.describe Comida::Lista do
 			expect(l).to respond_to(:head, :tail)
 		end
 	end
+
+	context "Creacion de metodo para insertar" do
+		it "Prueba metodo push_back" do
+			expect(l).to respond_to(:push_back)
+		end
+	end
 end
