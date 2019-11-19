@@ -21,5 +21,15 @@ module Comida
          @tail = nodo
        end
      end
+
+     def insert_head(value)
+       if (@head == nil && @tail == nil) then
+         nodo = Node.new(value, nil, nil)
+         @head = nodo
+         @tail = nodo
+       else
+
+       end
+      end
    end
 end
