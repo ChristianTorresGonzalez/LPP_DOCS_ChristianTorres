@@ -32,6 +32,15 @@ module Comida
          @head[:next] = nodo
          @head = nodo
        end
-      end
+     end
+
+     def insert_muchos_head(valores)
+       i = 0
+
+       while i < value.length
+         insert_head(value[i])
+         i += 1
+       end
+     end
    end
 end
