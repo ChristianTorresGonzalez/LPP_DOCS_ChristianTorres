@@ -132,4 +132,10 @@ RSpec.describe Comida::Lista do
 			expect(l).to respond_to(:insert_muchos_tail)
 		end
 	end
+
+	context "Creacion de metodo para insertar" do
+		it "Prueba metodo extraer cabeza " do
+			expect(l).to respond_to(:extract_head)
+		end
+	end
 end
