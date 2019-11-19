@@ -123,5 +123,9 @@ RSpec.describe Comida::Lista do
 		it "Prueba metodo insert_head" do
 			expect(l).to respond_to(:insert_head)
 		end
+
+		it "Prueba metodo insertar varios elementos" do
+			expect(l)to respond_to(:insert_muchos_head)
+		end
 	end
 end

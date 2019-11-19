@@ -28,7 +28,9 @@ module Comida
          @head = nodo
          @tail = nodo
        else
-
+         nodo = Nodo.new(value,@head,nil)
+         @head[:next] = nodo
+         @head = nodo
        end
       end
    end
