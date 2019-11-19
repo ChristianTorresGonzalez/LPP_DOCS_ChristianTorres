@@ -102,10 +102,16 @@ end
 
 
 RSpec.describe Comida::Lista do
-	context "Creacion de clase Lista" do
+
+	l = Comida::Lista.new
+
+	context "Creacion de clase Lista y atributos" do
 		it "Prueba creacion de clase" do
-			l = Comida::Lista.new
 			expect(l).not_to be(nil)
+		end
+
+		it "Prueba creacion atributos :head y :tail" do
+			expect(l).to respond_to(:head, :tail)
 		end
 	end
 end
