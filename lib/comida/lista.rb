@@ -34,7 +34,7 @@ module Comida
        end
      end
 
-     def insert_muchos_head(valores)
+     def insert_muchos_head(value)
        i = 0
 
        while i < value.length
@@ -43,12 +43,24 @@ module Comida
        end
      end
 
-     def insert_muchos_tail(valores)
+     def insert_muchos_tail(value)
        i = 0
 
        while i < value.length
          insert_tail(value[i])
          i += 1
+       end
+     end
+
+     def extract_head()
+       if (@head != nil && @tail != nil) then
+         if (head == tail) then
+           @head = nil
+           @tail = nil
+         else
+           @head = @head[:next]
+           @head[:prev] = nil
+         end
        end
      end
    end
