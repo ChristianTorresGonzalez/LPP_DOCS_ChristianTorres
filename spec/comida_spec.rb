@@ -124,8 +124,12 @@ RSpec.describe Comida::Lista do
 			expect(l).to respond_to(:insert_head)
 		end
 
-		it "Prueba metodo insertar varios elementos" do
+		it "Prueba metodo insertar varios elementos por cabeza" do
 			expect(l).to respond_to(:insert_muchos_head)
+		end
+
+		it "Prueba metodo insertar varios elementos por cola" do
+			expect(l).to respond_to(:insert_muchos_tail)
 		end
 	end
 end
