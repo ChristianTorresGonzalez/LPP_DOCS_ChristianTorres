@@ -46,7 +46,7 @@ module Comida
 			end
 
 			salida  = [impacto_ambiental, impacto_terreno]
-			
+
 		end
 	end
 end
