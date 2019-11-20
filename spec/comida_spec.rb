@@ -149,4 +149,8 @@ RSpec.describe Comida::Lista do
 		it "Prueba calculo emisiones de efecto invernadero" do
 			expect(española.calculo_emisiones_ei(española)).to eq(88)
 		end
+
+		it "Prueba calculo emisiones de efecto invernadero anuales" do
+			expect(española.calculo_emisiones_ei_anuales(española)).to eq(32120)
+		end
 	end

@@ -89,5 +89,9 @@ module Comida
 
        return suma
      end
+
+     def calculo_emisiones_ei_anuales(lista)
+       return calculo_emisiones_ei(lista) * 365
+     end
    end
 end
