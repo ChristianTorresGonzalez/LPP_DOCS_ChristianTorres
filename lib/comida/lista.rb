@@ -1,6 +1,6 @@
 module Comida
 
-   Node = Struct.new(:value, :next, :prev)
+   Nodo = Struct.new(:value, :next, :prev)
 
    class Lista
      attr_reader :head, :tail
@@ -12,7 +12,7 @@ module Comida
 
      def insert_tail(value)
        if (@head == nil && @tail == nil) then
-         nodo = Node.new(value, nil, nil)
+         nodo = Nodo.new(value, nil, nil)
          @head = nodo
          @tail = nodo
        else
@@ -24,12 +24,12 @@ module Comida
 
      def insert_head(value)
        if (@head == nil && @tail == nil) then
-         nodo = Node.new(value, nil, nil)
+         nodo = Nodo.new(value, nil, nil)
          @head = nodo
          @tail = nodo
        else
          nodo = Nodo.new(value,@head,nil)
-         @head[:next] = nodo
+         @head[:prev] = nodo
          @head = nodo
        end
      end
@@ -54,12 +54,24 @@ module Comida
 
      def extract_head()
        if (@head != nil && @tail != nil) then
-         if (head == tail) then
+         if (@head == @tail) then
            @head = nil
            @tail = nil
          else
            @head = @head[:next]
            @head[:prev] = nil
+         end
+       end
+     end
+
+     def extract_tail()
+       if (@head != nil && @tail != nil) then
+         if (@head == @tail) then
+           @head = nil
+           @tail = nil
+         else
+           @tail = @tail[:prev]
+           @tail[:next] = nil
          end
        end
      end

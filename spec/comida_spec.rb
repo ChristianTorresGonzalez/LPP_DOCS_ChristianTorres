@@ -138,4 +138,12 @@ RSpec.describe Comida::Lista do
 			expect(l).to respond_to(:extract_head)
 		end
 	end
-end
+
+	context "Pruebas de listas de comida"
+		española = Comida::Lista.new
+		española.insert_muchos_head([7,4.05,6.3])
+
+		it "Prueba calculo emisiones de efecto invernadero" do
+			expect(española.calculo_emisiones_ei(española)).to eq(1825)
+		end
+	end
