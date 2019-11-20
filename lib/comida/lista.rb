@@ -93,5 +93,19 @@ module Comida
      def calculo_emisiones_ei_anuales(lista)
        return calculo_emisiones_ei(lista) * 365
      end
+
+     def calculo_terreno(lista)
+       i = 0
+       suma = 0
+       nodo = lista.head
+
+       while nodo != nil
+         suma = suma + nodo.value.terreno
+         nodo = nodo[:next]
+         i += 1
+       end
+
+       return suma
+     end
    end
 end

@@ -153,4 +153,8 @@ RSpec.describe Comida::Lista do
 		it "Prueba calculo emisiones de efecto invernadero anuales" do
 			expect(española.calculo_emisiones_ei_anuales(española)).to eq(32120)
 		end
+
+		it "Prueba calculo metros de terreno" do
+			expect(española.calculo_terreno(española)).to eq(351)
+		end
 	end
