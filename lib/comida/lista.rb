@@ -82,7 +82,7 @@ module Comida
        nodo = lista.head
 
        while nodo != nil
-         suma = suma + nodo[:value]
+         suma = suma + nodo.value.gei
          nodo = nodo[:next]
          i += 1
        end

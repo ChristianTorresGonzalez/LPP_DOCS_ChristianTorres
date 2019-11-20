@@ -141,9 +141,12 @@ RSpec.describe Comida::Lista do
 
 	context "Pruebas de listas de comida"
 		española = Comida::Lista.new
-		española.insert_muchos_head([7,4.05,6.3])
+		carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
+		carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
+		camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
+		española.insert_muchos_head([carne_v,carne_c,camarones])
 
 		it "Prueba calculo emisiones de efecto invernadero" do
-			expect(española.calculo_emisiones_ei(española)).to eq(17.35)
+			expect(española.calculo_emisiones_ei(española)).to eq(88)
 		end
 	end
