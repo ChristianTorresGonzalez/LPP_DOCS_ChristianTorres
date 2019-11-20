@@ -157,4 +157,22 @@ RSpec.describe Comida::Lista do
 		it "Prueba calculo metros de terreno" do
 			expect(española.calculo_terreno(española)).to eq(351)
 		end
+
+		vasca = Comida::Lista.new
+		lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
+		chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
+		nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
+		vasca.insert_muchos_head([lentejas,chocolate,nuez])
+
+		it "Prueba calculo emisiones de efecto invernadero vasca" do
+			expect(vasca.calculo_emisiones_ei(vasca)).to eq(2.9999999999999996)
+		end
+
+		it "Prueba calculo emisiones de efecto invernadero anuales vasca" do
+			expect(vasca.calculo_emisiones_ei_anuales(vasca)).to eq(1094.9999999999998)
+		end
+
+		it "Prueba calculo metros de terreno vasca" do
+			expect(vasca.calculo_terreno(vasca)).to eq(14.700000000000001)
+		end
 	end
