@@ -75,5 +75,19 @@ module Comida
          end
        end
      end
+
+     def calculo_emisiones_ei(lista)
+       i = 0
+       suma = 0
+       nodo = lista.head
+
+       while nodo != nil
+         suma = suma + nodo[:value]
+         nodo = nodo[:next]
+         i += 1
+       end
+
+       return suma
+     end
    end
 end

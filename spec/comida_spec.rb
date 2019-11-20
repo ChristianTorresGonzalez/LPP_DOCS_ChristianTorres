@@ -144,6 +144,6 @@ RSpec.describe Comida::Lista do
 		española.insert_muchos_head([7,4.05,6.3])
 
 		it "Prueba calculo emisiones de efecto invernadero" do
-			expect(española.calculo_emisiones_ei(española)).to eq(1825)
+			expect(española.calculo_emisiones_ei(española)).to eq(17.35)
 		end
 	end
