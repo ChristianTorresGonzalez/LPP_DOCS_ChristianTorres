@@ -13,6 +13,9 @@ RSpec.describe Comida do
 	croquetas = Comida::Comida.new(n,pro,c,l,g,t)
 	lasaña = Comida::Comida.new(n,pro,c,l,g,t)
 	pollo = Comida::Comida.new(n,pro,c,l,g,t)
+	carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
+	carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
+	camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
 	value = [croquetas,lasaña,pollo]
 
 	it "has a version number" do
@@ -97,6 +100,20 @@ RSpec.describe Comida do
 
 	it "Calculo impacto_ambiental_mujer con ejemplo" do
 		expect(p.impacto_ambiental_mujer(value)).to eq([1.2000000000000002,10.2])
+	end
+
+	context "Comparacion de alimentos" do
+		it "Comprobacion de comparacion de alimentos con menor que" do
+			expect(carne_v < carne_c).to eq(true)
+		end
+
+		it "Comprobacion de comparacion de alimentos con mayor que" do
+			expect(carne_v > carne_c).to eq(false)
+		end
+
+		it "Comprobacion de comparacion de alimentos con igualdad" do
+			expect(carne_v == carne_c).to eq(false)
+		end
 	end
 end
 

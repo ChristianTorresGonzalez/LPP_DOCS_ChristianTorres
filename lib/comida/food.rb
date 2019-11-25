@@ -4,8 +4,10 @@ module Comida
 
 		attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
 
-		def <=>(Other)
-			self.calculo_valor_energetico <=> Other.calculo_valor_energetico
+		def <=>(other)
+			comparando = [self.calculo_valor_energetico, self.gei, self.terreno]
+			comparador = [other.calculo_valor_energetico, other.gei, other.terreno]
+			comparando <=> comparador
 		end
 
 		def initialize(name, protein, carbo, lipido, g, t)
