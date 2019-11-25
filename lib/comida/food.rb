@@ -1,7 +1,12 @@
 module Comida
 	class Comida
+		include Comparable
 
 		attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno
+
+		def <=>(Other)
+			self.calculo_valor_energetico <=> Other.calculo_valor_energetico
+		end
 
 		def initialize(name, protein, carbo, lipido, g, t)
 			@nombre = name
