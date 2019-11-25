@@ -1,111 +1,123 @@
 module Comida
+  include Enumerable
 
-   Nodo = Struct.new(:value, :next, :prev)
+    Nodo = Struct.new(:value, :next, :prev)
 
-   class Lista
-     attr_reader :head, :tail
+    class Lista
+      attr_reader :head, :tail
 
-     def initialize
-       @head = nil
-       @tail = nil
-     end
+      def each
+        # yield
+      end
 
-     def insert_tail(value)
-       if (@head == nil && @tail == nil) then
-         nodo = Nodo.new(value, nil, nil)
-         @head = nodo
-         @tail = nodo
-       else
-         nodo = Nodo.new(value,nil,@tail)
-         @tail[:next] = nodo
-         @tail = nodo
-       end
-     end
+      def initialize
+        @head = nil
+        @tail = nil
+      end
 
-     def insert_head(value)
-       if (@head == nil && @tail == nil) then
-         nodo = Nodo.new(value, nil, nil)
-         @head = nodo
-         @tail = nodo
-       else
-         nodo = Nodo.new(value,@head,nil)
-         @head[:prev] = nodo
-         @head = nodo
-       end
-     end
+      def insert_tail(value)
+        if (@head == nil && @tail == nil) then
+          nodo = Nodo.new(value, nil, nil)
+          @head = nodo
+          @tail = nodo
+        else
+          nodo = Nodo.new(value,nil,@tail)
+          @tail[:next] = nodo
+          @tail = nodo
+        end
+      end
 
-     def insert_muchos_head(value)
-       i = 0
+      def insert_head(value)
+        if (@head == nil && @tail == nil) then
+          nodo = Nodo.new(value, nil, nil)
+          @head = nodo
+          @tail = nodo
+        else
+          nodo = Nodo.new(value,@head,nil)
+          @head[:prev] = nodo
+          @head = nodo
+        end
+      end
 
-       while i < value.length
-         insert_head(value[i])
-         i += 1
-       end
-     end
+      def insert_muchos_head(value)
+        i = 0
 
-     def insert_muchos_tail(value)
-       i = 0
+        while i < value.length
+          insert_head(value[i])
+          i += 1
+        end
+      end
 
-       while i < value.length
-         insert_tail(value[i])
-         i += 1
-       end
-     end
+      def insert_muchos_tail(value)
+        i = 0
 
-     def extract_head()
-       if (@head != nil && @tail != nil) then
-         if (@head == @tail) then
-           @head = nil
-           @tail = nil
-         else
-           @head = @head[:next]
-           @head[:prev] = nil
-         end
-       end
-     end
+        while i < value.length
+          insert_tail(value[i])
+          i += 1
+        end
+      end
 
-     def extract_tail()
-       if (@head != nil && @tail != nil) then
-         if (@head == @tail) then
-           @head = nil
-           @tail = nil
-         else
-           @tail = @tail[:prev]
-           @tail[:next] = nil
-         end
-       end
-     end
+      def extract_head()
+        if (@head != nil && @tail != nil) then
+          if (@head == @tail) then
+            @head = nil
+            @tail = nil
+          else
+            @head = @head[:next]
+            @head[:prev] = nil
+          end
+        end
+      end
 
-     def calculo_emisiones_ei(lista)
-       i = 0
-       suma = 0
-       nodo = lista.head
+      def extract_tail()
+        if (@head != nil && @tail != nil) then
+          if (@head == @tail) then
+            @head = nil
+            @tail = nil
+          else
+            @tail = @tail[:prev]
+            @tail[:next] = nil
+          end
+        end
+      end
 
-       while nodo != nil
-         suma = suma + nodo.value.gei
-         nodo = nodo[:next]
-         i += 1
-       end
+      def calculo_emisiones_ei(lista)
+        i = 0
+        suma = 0
+        nodo = lista.head
 
-       return suma
-     end
+        while nodo != nil
+          suma = suma + nodo.value.gei
+          nodo = nodo[:next]
+          i += 1
+        end
 
-     def calculo_emisiones_ei_anuales(lista)
-       return calculo_emisiones_ei(lista) * 365
-     end
+        return suma
+      end
 
-     def calculo_terreno(lista)
-       i = 0
-       suma = 0
-       nodo = lista.head
+      def calculo_emisiones_ei_anuales(lista)
+        return calculo_emisiones_ei(lista) * 365
+      end
 
-       while nodo != nil
-         suma = suma + nodo.value.terreno
-         nodo = nodo[:next]
-         i += 1
-       end
+      def calculo_terreno(lista)
+        i = 0
+        suma = 0
+        nodo = lista.head
 
-       return suma
-     end
-   end
+        while nodo != nil
+          suma = suma + nodo.value.terreno
+          nodo = nodo[:next]
+          i += 1
+        end
+
+        return suma
+      end
+
+      def enumerar
+        i = 0
+
+        while i < value.length
+      end
+    end
+  end
 end
