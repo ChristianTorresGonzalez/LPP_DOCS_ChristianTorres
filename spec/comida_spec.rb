@@ -218,5 +218,9 @@ RSpec.describe Comida::Lista do
 end
 
 RSpec.describe Comida::Plato do
+	plato  = Comida::Plato.new
 
+	it "COmprobando existencia de atributo nombre de plato" do
+		expect(p).to respond_to(nombre_plato)
+	end
 end
