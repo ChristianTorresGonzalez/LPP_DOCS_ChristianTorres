@@ -306,7 +306,7 @@ RSpec.describe Comida::PlatoHija do
 	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
 	vasca.insert_muchos_head([lentejas,chocolate,nuez])
 
-	plato_hijo = Comida::Plato.new("pato a la naranja",española,e_cantidad)
+	plato_hijo = Comida::PlatoHija.new("pato a la naranja",española,e_cantidad)
 
 	context "Clase Plato Hija" do
 		it "Existencia de atributo para almacenar emisiones diarias" do
