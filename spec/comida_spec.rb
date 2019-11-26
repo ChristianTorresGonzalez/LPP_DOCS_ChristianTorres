@@ -220,7 +220,13 @@ end
 RSpec.describe Comida::Plato do
 	plato  = Comida::Plato.new("pato a la naranja")
 
-	it "COmprobando existencia de atributo nombre de plato" do
-		expect(plato).to respond_to(:nombre_plato)
+	context "Clase Plato" do
+		it "COmprobando existencia de atributo nombre de plato" do
+			expect(plato).to respond_to(:nombre_plato)
+		end
+
+		it "Comprobando existencia de conjunto de alimentos de plato" do
+			expect(plato).to respond_to(:lista_alimentos)
+		end
 	end
 end
