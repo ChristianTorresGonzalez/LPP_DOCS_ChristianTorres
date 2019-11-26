@@ -218,7 +218,22 @@ RSpec.describe Comida::Lista do
 end
 
 RSpec.describe Comida::Plato do
-	plato  = Comida::Plato.new("pato a la naranja")
+
+	española = Comida::Lista.new
+	carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
+	carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
+	camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
+	española.insert_muchos_head([carne_v,carne_c,camarones])
+	e_cantidad = Comida::Lista.new
+	e_cantidad.insert_muchos_head([100,100,50])
+
+	vasca = Comida::Lista.new
+	lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
+	chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
+	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
+	vasca.insert_muchos_head([lentejas,chocolate,nuez])
+
+	plato  = Comida::Plato.new("pato a la naranja",española,e_cantidad)
 
 	context "Clase Plato" do
 		it "COmprobando existencia de atributo nombre de plato" do
@@ -231,6 +246,10 @@ RSpec.describe Comida::Plato do
 
 		it "Comprobando existencia de conjunto de alimentos de plato" do
 			expect(plato).to respond_to(:lista_cantidades)
+		end
+
+		it "Comprobando existencia de conjunto de alimentos de plato" do
+			expect(plato).to respond_to(:porcentaje_proteinas)
 		end
 	end
 end
