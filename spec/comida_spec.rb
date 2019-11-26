@@ -217,6 +217,6 @@ RSpec.describe Comida::Lista do
 	end
 end
 
-RSpec describe Comida::Plato do
-	
+RSpec.describe Comida::Plato do
+
 end
