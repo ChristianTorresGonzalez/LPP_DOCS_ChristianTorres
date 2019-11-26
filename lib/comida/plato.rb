@@ -92,9 +92,18 @@ module Comida
       super(nombre,alimentos,cantidad)
       @emisiones_diarias = 0
     end
-    #
-    # def calculo_emisiones_diarias
-    #
-    # end
+
+    def calculo_emisiones_diarias
+      recorrido = lista_alimentos.head
+      acumulador = 0
+
+      while recorrido != nil
+        acumulador = acumulador + recorrido.value.calculo_emisiones_ei
+
+        recorrido = recorrido.next
+      end
+
+      acumulador
+    end
   end
 end
