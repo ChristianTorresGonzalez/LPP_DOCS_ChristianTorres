@@ -292,49 +292,66 @@ end
 
 RSpec.describe Comida::PlatoHija do
 
+	# carne_v = Comida::Comida.new("carne_v",21.1,0,3.1,50,164)
+	# carne_c = Comida::Comida.new("carne_c",18,0,17,20,185)
+	# camarones = Comida::Comida.new("camarones",17.6,1.5,0.6,18,2)
+
 	española = Comida::Lista.new
-	carne_v = Comida::Comida.new("carne_v",21.1,0,3.1,50,164)
-	carne_c = Comida::Comida.new("carne_c",18,0,17,20,185)
-	camarones = Comida::Comida.new("camarones",17.6,1.5,0.6,18,2)
-	española.insert_muchos_head([carne_v,carne_c,camarones])
-	e_cantidad = Comida::Lista.new
-	e_cantidad.insert_muchos_head([1000,1000,1000])
+	queso = Comida::Comida.new("quesa",25.0,1.3,33.0,11.0,41.0)
+	lentejas = Comida::Comida.new("lentejas",23.5,52,1.4,0.4,3.4)
+	chocolate = Comida::Comida.new("chocolate",5.3,47,30,2.3,3.4)
+	española.insert_muchos_head([lentejas,chocolate,queso])
+	española_cantidad = Comida::Lista.new
+	española_cantidad.insert_muchos_head([7,4,6])
+
+
+	tofu = Comida::Comida.new("tofu",8.0,1.9,4.8,2.0,2.2)
 
 	vasca = Comida::Lista.new
-	lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
-	chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
 	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
-	vasca.insert_muchos_head([lentejas,chocolate,nuez])
+	cerveza = Comida::Comida.new("cerveza",0.5,3.6,0.0,0.24,0.22)
+	vasca.insert_muchos_head([nuez,cerveza])
+	vasca_cantidad = Comida::Lista.new
+	vasca_cantidad.insert_muchos_head([7,4,6])
 
-	plato_hijo = Comida::PlatoHija.new("pato a la naranja",española,e_cantidad)
+	plato_español = Comida::PlatoHija.new("pato a la naranja",española,española_cantidad)
+	plato_vasco = Comida::PlatoHija.new("fuagra",vasca,vasca_cantidad)
 
 	context "Clase Plato Hija" do
 		it "Existencia de atributo para almacenar emisiones diarias" do
-			expect(plato_hijo).to respond_to(:emisiones_diarias)
+			expect(plato_español).to respond_to(:emisiones_diarias)
 		end
 
 		it "Existencia de metodo para calcular las emisiones diarias" do
-			expect(plato_hijo).to respond_to(:calculo_emisiones_diarias)
+			expect(plato_español).to respond_to(:calculo_emisiones_diarias)
 		end
 
 		it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
-			expect(plato_hijo.calculo_emisiones_diarias).to eq(88)
+			expect(plato_español.calculo_emisiones_diarias).to eq(0.078)
 		end
 
 		it "Existencia de metodo para calcular las metros de terreno" do
-			expect(plato_hijo).to respond_to(:calculo_metros_terreno)
+			expect(plato_español).to respond_to(:calculo_metros_terreno)
 		end
 
 		it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
-			expect(plato_hijo.calculo_metros_terreno).to eq(252)
+			expect(plato_español.calculo_metros_terreno).to eq(0.1018)
 		end
 
 		it "Existencia de metodo para calcular las metros de terreno" do
-			expect(plato_hijo.to_s).to eq(["1000gr de camarones", "1000gr de carne_c", "1000gr de carne_v", 88, 252])
+			expect(plato_español.to_s).to eq(["6gr de quesa", "4gr de chocolate", "7gr de lentejas", 0.078, 0.1018])
 		end
 
-		# it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
-		# 	expect(plato_hijo.calculo_metros_terreno).to eq(164)
-		# end
+		it "Comparando dos platos con meno que" do
+			expect(plato_español < plato_vasco).to eq(false)
+		end
+
+		it "Comparando dos platos con mayor que" do
+			expect(plato_español > plato_vasco).to eq(true)
+		end
+
+		it "Comparando dos platos con igual que" do
+			expect(plato_español == plato_vasco).to eq(false)
+		end
 	end
 end

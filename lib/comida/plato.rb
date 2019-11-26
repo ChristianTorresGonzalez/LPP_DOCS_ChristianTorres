@@ -6,6 +6,20 @@ module Comida
       @nombre_plato = nombre
       @lista_alimentos = alimentos
       @lista_cantidades = cantidad
+
+      # aux = Lista.new(nil,nil)
+      # i = 0
+      # while i < alimentos.length
+      #   aux.insert_muchos_head(alimentos)
+      # end
+      # @lista_alimentos = aux
+
+      # aux2 = Lista.new(nil,nil)
+      # i = 0
+      # while i < alimentos.length
+      #   aux2.insert_muchos_head(alimentos)
+      # end
+      # @lista_alimentos = aux2
     end
 
     def porcentaje_proteinas
@@ -86,7 +100,15 @@ module Comida
   end
 
   class PlatoHija < Plato
+    include Comparable
+
     attr_reader :emisiones_diarias, :metros_terreno
+
+    def <=>(other)
+      comparando = [self.calculo_emisiones_diarias,self.calculo_metros_terreno]
+      comparador = [other.calculo_emisiones_diarias,other.calculo_metros_terreno]
+      comparando <=> comparador
+    end
 
     def initialize(nombre,alimentos,cantidad)
       super(nombre,alimentos,cantidad)
