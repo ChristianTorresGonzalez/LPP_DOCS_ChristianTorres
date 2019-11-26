@@ -22,5 +22,20 @@ module Comida
 
       ((porcentaje * 100)/acumulador).round(2)
     end
+
+    # def porcentaje_lipidos
+    #   recorrido = lista_alimentos.head
+    #   acumulador = 0
+    #   porcentaje = 0
+    #
+    #   while recorrido != nil
+    #     acumulador = acumulador + recorrido.value.proteinas + recorrido.value.carbohidratos + recorrido.value.lipidos
+    #     porcentaje = porcentaje + recorrido.value.lipidos
+    #
+    #     recorrido = recorrido.next
+    #   end
+    #
+    #   ((porcentaje * 100)/acumulador).round(2)
+    # end
   end
 end

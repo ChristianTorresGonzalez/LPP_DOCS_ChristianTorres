@@ -248,12 +248,20 @@ RSpec.describe Comida::Plato do
 			expect(plato).to respond_to(:lista_cantidades)
 		end
 
-		it "Comprobando existencia de conjunto de alimentos de plato" do
+		it "Comprobando existencia de metodo de porcentaje de proteinas" do
 			expect(plato).to respond_to(:porcentaje_proteinas)
 		end
 
 		it "Comprobando funcionamiento de calculo de porcentaje de proteinas" do
 			expect(plato.porcentaje_proteinas).to eq(71.86)
 		end
+
+		it "Comprobando existencia de metodo de porcentaje de lipidos" do
+			expect(plato).to respond_to(:porcentaje_lipidos)
+		end
+
+		# it "Comprobando funcionamiento de calculo de porcentaje de proteinas" do
+		# 	expect(plato.porcentaje_proteinas).to eq(71.86)
+		# end
 	end
 end
