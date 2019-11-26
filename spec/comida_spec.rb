@@ -230,7 +230,7 @@ RSpec.describe Comida::Plato do
 		end
 
 		it "Comprobando existencia de conjunto de alimentos de plato" do
-			expect(plato).to respond_to(:lista_cantidad)
+			expect(plato).to respond_to(:lista_cantidades)
 		end
 	end
 end
