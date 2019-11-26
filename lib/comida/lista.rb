@@ -1,9 +1,9 @@
 module Comida
-  include Enumerable
 
     Nodo = Struct.new(:value, :next, :prev)
 
     class Lista
+      include Enumerable
       attr_reader :head, :tail
 
       def each

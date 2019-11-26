@@ -122,6 +122,18 @@ RSpec.describe Comida::Lista do
 
 	l = Comida::Lista.new
 
+	española = Comida::Lista.new
+	carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
+	carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
+	camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
+	española.insert_muchos_head([carne_v,carne_c,camarones])
+
+	vasca = Comida::Lista.new
+	lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
+	chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
+	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
+	vasca.insert_muchos_head([lentejas,chocolate,nuez])
+
 	context "Creacion de clase Lista y atributos" do
 		it "Prueba creacion de clase" do
 			expect(l).not_to be(nil)
@@ -156,13 +168,7 @@ RSpec.describe Comida::Lista do
 		end
 	end
 
-	context "Pruebas de listas de comida"
-		española = Comida::Lista.new
-		carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
-		carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
-		camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
-		española.insert_muchos_head([carne_v,carne_c,camarones])
-
+	context "Pruebas de listas de comida" do
 		it "Prueba calculo emisiones de efecto invernadero" do
 			expect(española.calculo_emisiones_ei(española)).to eq(88)
 		end
@@ -174,12 +180,6 @@ RSpec.describe Comida::Lista do
 		it "Prueba calculo metros de terreno" do
 			expect(española.calculo_terreno(española)).to eq(351)
 		end
-
-		vasca = Comida::Lista.new
-		lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
-		chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
-		nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
-		vasca.insert_muchos_head([lentejas,chocolate,nuez])
 
 		it "Prueba calculo emisiones de efecto invernadero vasca" do
 			expect(vasca.calculo_emisiones_ei(vasca)).to eq(2.9999999999999996)
@@ -193,3 +193,10 @@ RSpec.describe Comida::Lista do
 			expect(vasca.calculo_terreno(vasca)).to eq(14.700000000000001)
 		end
 	end
+
+	context "Enumeracion de elementos de la lista doblemente enlazada" do
+		it "Prueba de enumeracion de lista" do
+			expect(vasca.collect{|x| x.proteinas < 10.0}).to eq([false,true,false])
+		end
+	end
+end
