@@ -97,50 +97,48 @@ module Comida
     def calculo_emisiones_diarias
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
-      emisiones_diarias = 0
 
       while (recorrido != nil && cantidad != nil)
-        emisiones_diarias = emisiones_diarias + ((recorrido.value.gei * cantidad.value)/1000)
+        @emisiones_diarias = @emisiones_diarias + ((recorrido.value.gei * cantidad.value)/1000)
 
         recorrido = recorrido.next
         cantidad = cantidad.next
       end
 
-      emisiones_diarias
+      @emisiones_diarias
     end
 
     def calculo_metros_terreno
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
-      metros_terreno = 0
 
       while (recorrido != nil && cantidad != nil)
-        metros_terreno = emisiones_diarias + ((recorrido.value.terreno * cantidad.value)/1000)
+        @metros_terreno = @emisiones_diarias + ((recorrido.value.terreno * cantidad.value)/1000)
 
         recorrido = recorrido.next
         cantidad = cantidad.next
       end
 
-      metros_terreno
+      @metros_terreno
     end
 
-    # def to_s
-    #   recorrido = lista_alimentos.head
-    #   cantidad = lista_cantidades.head
-    #   formateo = []
-    #
-    #   while (recorrido != nil && cantidad != nil)
-    #     salida =  cantidad.value.to_s + "gr de " + recorrido.value.nombre +
-    #     formateo.push(salida)
-    #
-    #     recorrido = recorrido.next
-    #     cantidad = cantidad.next
-    #   end
-    #
-    #   formateo.push(emisiones_diarias)
-    #   formateo.push(metros_terreno)
-    #
-    #   formateo
-    # end
+    def to_s
+      recorrido = lista_alimentos.head
+      cantidad = lista_cantidades.head
+      formateo = []
+
+      while (recorrido != nil && cantidad != nil)
+        salida =  cantidad.value.to_s + "gr de " + recorrido.value.nombre
+        formateo.push(salida)
+
+        recorrido = recorrido.next
+        cantidad = cantidad.next
+      end
+
+      formateo.push(@emisiones_diarias)
+      formateo.push(@metros_terreno)
+
+      formateo
+    end
   end
 end
