@@ -202,5 +202,9 @@ RSpec.describe Comida::Lista do
 		it "Prueba de enumeracion de lista select" do
 			expect(vasca.select{|x| x.proteinas < 10.0}).to eq([chocolate])
 		end
+
+		it "Prueba de enumeracion de lista select" do
+			expect(vasca.max).to eq(nuez)
+		end
 	end
 end
