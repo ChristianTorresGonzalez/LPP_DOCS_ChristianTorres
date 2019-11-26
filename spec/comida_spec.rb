@@ -195,8 +195,12 @@ RSpec.describe Comida::Lista do
 	end
 
 	context "Enumeracion de elementos de la lista doblemente enlazada" do
-		it "Prueba de enumeracion de lista" do
+		it "Prueba de enumeracion de lista collect" do
 			expect(vasca.collect{|x| x.proteinas < 10.0}).to eq([false,true,false])
+		end
+
+		it "Prueba de enumeracion de lista select" do
+			expect(vasca.select{|x| x.proteinas < 10.0}).to eq([chocolate])
 		end
 	end
 end
