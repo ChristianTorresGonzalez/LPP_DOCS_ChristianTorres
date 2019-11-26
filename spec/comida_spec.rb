@@ -271,5 +271,13 @@ RSpec.describe Comida::Plato do
 		it "Comprobando funcionamiento de calculo de porcentaje de lipidos" do
 			expect(plato.porcentaje_carbohidratos).to eq(1.9)
 		end
+
+		it "Comprobando existencia de metodo de calculo valor calorico total" do
+			expect(plato).to respond_to(:calculo_valor_calorico_total)
+		end
+
+		# it "Comprobando funcionamiento de calculo de porcentaje de lipidos" do
+		# 	expect(plato.porcentaje_carbohidratos).to eq(1.9)
+		# end
 	end
 end
