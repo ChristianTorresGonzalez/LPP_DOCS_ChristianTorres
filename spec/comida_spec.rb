@@ -220,9 +220,9 @@ end
 RSpec.describe Comida::Plato do
 
 	española = Comida::Lista.new
-	carne_v = Comida::Comida.new(carne_v,21.1,0,3.1,50,164)
-	carne_c = Comida::Comida.new(carne_c,18,0,17,20,185)
-	camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
+	carne_v = Comida::Comida.new("carne_v",21.1,0,3.1,50,164)
+	carne_c = Comida::Comida.new("carne_c",18,0,17,20,185)
+	camarones = Comida::Comida.new("camarones",17.6,1.5,0.6,18,2)
 	española.insert_muchos_head([carne_v,carne_c,camarones])
 	e_cantidad = Comida::Lista.new
 	e_cantidad.insert_muchos_head([1000,1000,1000])
@@ -282,6 +282,10 @@ RSpec.describe Comida::Plato do
 
 		it "Comprobando existencia de metodo para formaterar salida" do
 			expect(plato).to respond_to(:to_s)
+		end
+
+		it "Comprobando funcionamiento de metodo para formaterar salida" do
+			expect(plato.to_s).to eq(["1000gr de camarones", "1000gr de carne_c", "1000gr de carne_v"])
 		end
 	end
 end

@@ -58,14 +58,30 @@ module Comida
       cantidad = lista_cantidades.head
       acumulador = 0
 
-      while recorrido != nil
+      while (recorrido != nil && cantidad != nil)
         acumulador = acumulador + (((recorrido.value.proteinas * cantidad.value)/1000) * 4) + (((recorrido.value.lipidos * cantidad.value)/1000) * 9) + (((recorrido.value.carbohidratos * cantidad.value)/1000) * 4)
 
         recorrido = recorrido.next
         cantidad = cantidad.next
       end
-      
-      acumulador
+
+      acumulador.round(2)
+    end
+
+    def to_s
+      recorrido = lista_alimentos.head
+      cantidad = lista_cantidades.head
+      formateo = []
+
+      while (recorrido != nil && cantidad != nil)
+        salida =  cantidad.value.to_s + "gr de " + recorrido.value.nombre
+        formateo.push(salida)
+
+        recorrido = recorrido.next
+        cantidad = cantidad.next
+      end
+
+      formateo
     end
   end
 end
