@@ -289,3 +289,7 @@ RSpec.describe Comida::Plato do
 		end
 	end
 end
+
+RSpec.describe Comida::PlatoHija do
+
+end
