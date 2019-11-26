@@ -59,11 +59,13 @@ module Comida
       acumulador = 0
 
       while recorrido != nil
-        acumulador = acumulador + (((recorrido.value.proteina * cantidad.value)/1000) * 4) + (((recorrido.value.lipidos * cantidad.value)/1000) * 9) + (((recorrido.value.carbohidratos * cantidad.value)/1000) * 4)
+        acumulador = acumulador + (((recorrido.value.proteinas * cantidad.value)/1000) * 4) + (((recorrido.value.lipidos * cantidad.value)/1000) * 9) + (((recorrido.value.carbohidratos * cantidad.value)/1000) * 4)
 
         recorrido = recorrido.next
         cantidad = cantidad.next
       end
+      
+      acumulador
     end
   end
 end
