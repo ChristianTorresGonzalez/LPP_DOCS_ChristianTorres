@@ -7,5 +7,9 @@ module Comida
       @lista_alimentos = alimentos
       @lista_cantidades = cantidad
     end
+
+    def porcentaje_proteinas
+      
+    end
   end
 end
