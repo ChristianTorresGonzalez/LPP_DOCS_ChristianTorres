@@ -210,5 +210,9 @@ RSpec.describe Comida::Lista do
 		it "Prueba de enumeracion de lista min" do
 			expect(vasca.min).to eq(lentejas)
 		end
+
+		it "Prueba de enumeracion de lista sort" do
+			expect(vasca.sort{|a, b| b <=> a}).to eq([nuez,chocolate,lentejas])
+		end
 	end
 end
