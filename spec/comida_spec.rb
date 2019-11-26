@@ -170,11 +170,11 @@ RSpec.describe Comida::Lista do
 
 	context "Pruebas de listas de comida" do
 		it "Prueba calculo emisiones de efecto invernadero" do
-			expect(española.calculo_emisiones_ei(española)).to eq(88)
+			expect(española.calculo_emisiones_ei).to eq(88)
 		end
 
 		it "Prueba calculo emisiones de efecto invernadero anuales" do
-			expect(española.calculo_emisiones_ei_anuales(española)).to eq(32120)
+			expect(española.calculo_emisiones_ei_anuales).to eq(32120)
 		end
 
 		it "Prueba calculo metros de terreno" do
@@ -182,11 +182,11 @@ RSpec.describe Comida::Lista do
 		end
 
 		it "Prueba calculo emisiones de efecto invernadero vasca" do
-			expect(vasca.calculo_emisiones_ei(vasca)).to eq(2.9999999999999996)
+			expect(vasca.calculo_emisiones_ei).to eq(2.9999999999999996)
 		end
 
 		it "Prueba calculo emisiones de efecto invernadero anuales vasca" do
-			expect(vasca.calculo_emisiones_ei_anuales(vasca)).to eq(1094.9999999999998)
+			expect(vasca.calculo_emisiones_ei_anuales).to eq(1094.9999999999998)
 		end
 
 		it "Prueba calculo metros de terreno vasca" do
@@ -311,6 +311,10 @@ RSpec.describe Comida::PlatoHija do
 	context "Clase Plato Hija" do
 		it "Existencia de atributo para almacenar emisiones diarias" do
 			expect(plato_hijo).to respond_to(:emisiones_diarias)
+		end
+
+		it "Existencia de metodo para calcular las emisiones diarias" do
+			expect(plato_hijo).to respond_to(:calculo_emisiones_diarias)
 		end
 	end
 end

@@ -87,10 +87,10 @@ module Comida
         end
       end
 
-      def calculo_emisiones_ei(lista)
+      def calculo_emisiones_ei
         i = 0
         suma = 0
-        nodo = lista.head
+        nodo = self.head
 
         while nodo != nil
           suma = suma + nodo.value.gei
@@ -101,8 +101,8 @@ module Comida
         return suma
       end
 
-      def calculo_emisiones_ei_anuales(lista)
-        return calculo_emisiones_ei(lista) * 365
+      def calculo_emisiones_ei_anuales
+        return self.calculo_emisiones_ei * 365
       end
 
       def calculo_terreno(lista)
