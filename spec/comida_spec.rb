@@ -292,4 +292,25 @@ end
 
 RSpec.describe Comida::PlatoHija do
 
+	española = Comida::Lista.new
+	carne_v = Comida::Comida.new("carne_v",21.1,0,3.1,50,164)
+	carne_c = Comida::Comida.new("carne_c",18,0,17,20,185)
+	camarones = Comida::Comida.new("camarones",17.6,1.5,0.6,18,2)
+	española.insert_muchos_head([carne_v,carne_c,camarones])
+	e_cantidad = Comida::Lista.new
+	e_cantidad.insert_muchos_head([1000,1000,1000])
+
+	vasca = Comida::Lista.new
+	lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
+	chocolate = Comida::Comida.new(chocolate,5.3,47,30,2.3,3.4)
+	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
+	vasca.insert_muchos_head([lentejas,chocolate,nuez])
+
+	plato_hijo = Comida::Plato.new("pato a la naranja",española,e_cantidad)
+
+	context "Clase Plato Hija" do
+		it "Existencia de atributo para almacenar emisiones diarias" do
+			expect(plato_hijo).to respond_to(:emisiones_diarias)
+		end
+	end
 end

@@ -86,6 +86,10 @@ module Comida
   end
 
   class PlatoHija < Plato
-    
+    # attr_reader :emisiones_diarias
+    #
+    # def calculo_emisiones_diarias
+    #
+    # end
   end
 end
