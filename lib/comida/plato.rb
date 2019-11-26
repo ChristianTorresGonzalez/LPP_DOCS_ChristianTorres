@@ -110,7 +110,18 @@ module Comida
     end
 
     def calculo_metros_terreno
-      
+      recorrido = lista_alimentos.head
+      cantidad = lista_cantidades.head
+      metros_terreno = 0
+
+      while (recorrido != nil && cantidad != nil)
+        metros_terreno = emisiones_diarias + ((recorrido.value.terreno * cantidad.value)/1000)
+
+        recorrido = recorrido.next
+        cantidad = cantidad.next
+      end
+
+      metros_terreno
     end
   end
 end
