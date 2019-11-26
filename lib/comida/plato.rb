@@ -52,5 +52,18 @@ module Comida
 
       ((porcentaje * 100)/acumulador).round(2)
     end
+
+    def calculo_valor_calorico_total
+      recorrido = lista_alimentos.head
+      cantidad = lista_cantidades.head
+      acumulador = 0
+
+      while recorrido != nil
+        acumulador = acumulador + (((recorrido.value.proteina * cantidad.value)/1000) * 4) + (((recorrido.value.lipidos * cantidad.value)/1000) * 9) + (((recorrido.value.carbohidratos * cantidad.value)/1000) * 4)
+
+        recorrido = recorrido.next
+        cantidad = cantidad.next
+      end
+    end
   end
 end

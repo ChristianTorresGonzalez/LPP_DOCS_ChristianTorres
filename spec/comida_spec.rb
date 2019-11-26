@@ -225,7 +225,7 @@ RSpec.describe Comida::Plato do
 	camarones = Comida::Comida.new(camarones,17.6,1.5,0.6,18,2)
 	española.insert_muchos_head([carne_v,carne_c,camarones])
 	e_cantidad = Comida::Lista.new
-	e_cantidad.insert_muchos_head([100,100,50])
+	e_cantidad.insert_muchos_head([1000,1000,1000])
 
 	vasca = Comida::Lista.new
 	lentejas = Comida::Comida.new(lentejas,23.5,52,1.4,0.4,3.4)
