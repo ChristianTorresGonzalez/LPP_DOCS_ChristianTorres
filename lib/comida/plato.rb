@@ -123,5 +123,24 @@ module Comida
 
       metros_terreno
     end
+
+    # def to_s
+    #   recorrido = lista_alimentos.head
+    #   cantidad = lista_cantidades.head
+    #   formateo = []
+    #
+    #   while (recorrido != nil && cantidad != nil)
+    #     salida =  cantidad.value.to_s + "gr de " + recorrido.value.nombre +
+    #     formateo.push(salida)
+    #
+    #     recorrido = recorrido.next
+    #     cantidad = cantidad.next
+    #   end
+    #
+    #   formateo.push(emisiones_diarias)
+    #   formateo.push(metros_terreno)
+    #
+    #   formateo
+    # end
   end
 end

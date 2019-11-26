@@ -328,5 +328,13 @@ RSpec.describe Comida::PlatoHija do
 		it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
 			expect(plato_hijo.calculo_metros_terreno).to eq(164)
 		end
+
+		# it "Existencia de metodo para calcular las metros de terreno" do
+		# 	expect(plato_hijo).to respond_to(:calculo_metros_terreno)
+		# end
+		#
+		# it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
+		# 	expect(plato_hijo.calculo_metros_terreno).to eq(164)
+		# end
 	end
 end

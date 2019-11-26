@@ -7,7 +7,6 @@ module Comida
       attr_reader :head, :tail
 
       def each
-        i = 0
         inicio = head
         while inicio != nil
           yield inicio.value
