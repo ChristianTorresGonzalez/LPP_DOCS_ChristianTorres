@@ -94,16 +94,7 @@ module Comida
     end
 
     def calculo_emisiones_diarias
-      recorrido = lista_alimentos.head
-      acumulador = 0
-
-      while recorrido != nil
-        acumulador = acumulador + recorrido.value.calculo_emisiones_ei
-
-        recorrido = recorrido.next
-      end
-
-      acumulador
+      emisiones_diarias = lista_alimentos.calculo_emisiones_ei
     end
   end
 end

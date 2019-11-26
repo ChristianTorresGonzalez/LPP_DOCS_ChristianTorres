@@ -316,5 +316,9 @@ RSpec.describe Comida::PlatoHija do
 		it "Existencia de metodo para calcular las emisiones diarias" do
 			expect(plato_hijo).to respond_to(:calculo_emisiones_diarias)
 		end
+
+		it "COmprobando funcionamiento de metodo para calcular las emisiones diarias de gei" do
+			expect(plato_hijo.calculo_emisiones_diarias).to eq(88)
+		end
 	end
 end
