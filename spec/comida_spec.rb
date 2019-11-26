@@ -279,5 +279,9 @@ RSpec.describe Comida::Plato do
 		it "Comprobando funcionamiento de calculo_valor_calorico_total" do
 			expect(plato.calculo_valor_calorico_total).to eq(419.1)
 		end
+
+		it "Comprobando existencia de metodo para formaterar salida" do
+			expect(plato).to respond_to(:to_s)
+		end
 	end
 end
