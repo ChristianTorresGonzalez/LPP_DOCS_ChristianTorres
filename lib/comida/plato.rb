@@ -86,11 +86,12 @@ module Comida
   end
 
   class PlatoHija < Plato
-    attr_reader :emisiones_diarias
+    attr_reader :emisiones_diarias, :metros_terreno
 
     def initialize(nombre,alimentos,cantidad)
       super(nombre,alimentos,cantidad)
       @emisiones_diarias = 0
+      @metros_terreno = 0
     end
 
     def calculo_emisiones_diarias
@@ -106,6 +107,10 @@ module Comida
       end
 
       emisiones_diarias
+    end
+
+    def calculo_metros_terreno
+      
     end
   end
 end
