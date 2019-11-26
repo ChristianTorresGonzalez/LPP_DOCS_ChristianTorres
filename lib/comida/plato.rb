@@ -84,4 +84,8 @@ module Comida
       formateo
     end
   end
+
+  class PlatoHija < Plato
+    
+  end
 end
