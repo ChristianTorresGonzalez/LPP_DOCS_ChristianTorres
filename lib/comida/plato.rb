@@ -94,7 +94,18 @@ module Comida
     end
 
     def calculo_emisiones_diarias
-      emisiones_diarias = lista_alimentos.calculo_emisiones_ei
+      recorrido = lista_alimentos.head
+      cantidad = lista_cantidades.head
+      emisiones_diarias = 0
+
+      while (recorrido != nil && cantidad != nil)
+        emisiones_diarias = emisiones_diarias + ((recorrido.value.gei * cantidad.value)/1000)
+
+        recorrido = recorrido.next
+        cantidad = cantidad.next
+      end
+
+      emisiones_diarias
     end
   end
 end
