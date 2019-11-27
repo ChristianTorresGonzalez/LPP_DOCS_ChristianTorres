@@ -368,5 +368,9 @@ RSpec.describe Comida::PlatoHija do
 		it "ENumeracion de listas de platos con sellect" do
 			expect(lista_platos.max).to eq(plato_español)
 		end
+
+		it "ENumeracion de listas de platos con sellect" do
+			expect(lista_platos.min).to eq(plato_vasco)
+		end
 	end
 end
