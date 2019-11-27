@@ -357,8 +357,12 @@ RSpec.describe Comida::PlatoHija do
 			expect(plato_español == plato_vasco).to eq(false)
 		end
 
-		it "ENumeracion de listas de platos" do
+		it "ENumeracion de listas de platos con collect" do
 			expect(lista_platos.collect {|x| x.emisiones_diarias < 500}).to eq([true,true])
+		end
+
+		it "ENumeracion de listas de platos con sellect" do
+			expect(lista_platos.select {|x| x.emisiones_diarias < 500}).to eq([plato_vasco,plato_español])
 		end
 	end
 end
