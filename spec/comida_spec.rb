@@ -287,6 +287,10 @@ RSpec.describe Comida::Plato do
 		it "Comprobando funcionamiento de metodo para formaterar salida" do
 			expect(plato.to_s).to eq(["1000gr de camarones", "1000gr de carne_c", "1000gr de carne_v"])
 		end
+
+		it "Comprobando clase del objeto plato" do
+			expect(plato.class).to eq(Comida::Plato)
+		end
 	end
 end
 
