@@ -304,10 +304,6 @@ end
 
 RSpec.describe Comida::PlatoHija do
 
-	# carne_v = Comida::Comida.new("carne_v",21.1,0,3.1,50,164)
-	# carne_c = Comida::Comida.new("carne_c",18,0,17,20,185)
-	# camarones = Comida::Comida.new("camarones",17.6,1.5,0.6,18,2)
-
 	española = Comida::Lista.new
 	queso = Comida::Comida.new("quesa",25.0,1.3,33.0,11.0,41.0)
 	lentejas = Comida::Comida.new("lentejas",23.5,52,1.4,0.4,3.4)
@@ -316,9 +312,6 @@ RSpec.describe Comida::PlatoHija do
 	española_cantidad = Comida::Lista.new
 	española_cantidad.insert_muchos_head([7,4,6])
 
-
-	tofu = Comida::Comida.new("tofu",8.0,1.9,4.8,2.0,2.2)
-
 	vasca = Comida::Lista.new
 	nuez = Comida::Comida.new(nuez,20,21,54,0.3,7.9)
 	cerveza = Comida::Comida.new("cerveza",0.5,3.6,0.0,0.24,0.22)
@@ -326,8 +319,30 @@ RSpec.describe Comida::PlatoHija do
 	vasca_cantidad = Comida::Lista.new
 	vasca_cantidad.insert_muchos_head([7,4,6])
 
+	vegetariana = Comida::Lista.new
+	leche = Comida::Comida.new("leche",3.3,4.8,3.2,3.2,8.9)
+	huevo = Comida::Comida.new("huevo",13.0,1.1,11.0,4.2,5.7)
+	tofu = Comida::Comida.new("tofu",8.0,1.9,4.8,2.0,2.2)
+	vegetariana.insert_muchos_head([leche,huevo,tofu])
+	vegetariana_cantida = Comida::Lista.new
+	vegetariana_cantida.insert_muchos_head([10,9,6])
+
+	solo_carne = Comida::Lista.new
+	carne_v = Comida::Comida.new("Carne_vaca",21.1,0.0,3.1,50.0,164.0)
+	carne_c = Comida::Comida.new("Carne_cordero",18.0,0.0,17.0,20.0,185.0)
+	pollo = Comida::Comida.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+	solo_carne.insert_muchos_head([carne_v,carne_c,pollo])
+	solo_carne_cantidad = Comida::Lista.new
+	solo_carne_cantidad.insert_muchos_head([5,4,5])
+
+	vegetaliana = Comida::Lista.new
+	vegetaliana.insert_muchos_head([lentejas,tofu,nuez])
+	vegetaliana_cantidad = Comida::Lista.new
+	vegetaliana_cantidad.insert_muchos_head([6,9,7])
+
 	plato_español = Comida::PlatoHija.new("pato a la naranja",española,española_cantidad)
 	plato_vasco = Comida::PlatoHija.new("fuagra",vasca,vasca_cantidad)
+	plato_vegetariano = Comida::PlatoHija.new("tonteria",vegetariana,vegetariana_cantida)
 
 	lista_platos = Comida::Lista.new
 	lista_platos.insert_muchos_head([plato_español,plato_vasco])
