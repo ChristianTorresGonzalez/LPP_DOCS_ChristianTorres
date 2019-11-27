@@ -317,6 +317,9 @@ RSpec.describe Comida::PlatoHija do
 	plato_español = Comida::PlatoHija.new("pato a la naranja",española,española_cantidad)
 	plato_vasco = Comida::PlatoHija.new("fuagra",vasca,vasca_cantidad)
 
+	lista_platos = Comida::Lista.new
+	lista_platos.insert_muchos_head([plato_español,plato_vasco])
+
 	context "Clase Plato Hija" do
 		it "Existencia de atributo para almacenar emisiones diarias" do
 			expect(plato_español).to respond_to(:emisiones_diarias)
@@ -352,6 +355,10 @@ RSpec.describe Comida::PlatoHija do
 
 		it "Comparando dos platos con igual que" do
 			expect(plato_español == plato_vasco).to eq(false)
+		end
+
+		it "ENumeracion de listas de platos" do
+			expect(lista_platos.collect {|x| x.emisiones_diarias < 500}).to eq([true,true])
 		end
 	end
 end
