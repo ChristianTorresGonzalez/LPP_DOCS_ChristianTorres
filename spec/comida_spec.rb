@@ -291,6 +291,10 @@ RSpec.describe Comida::Plato do
 		it "Comprobando clase del objeto plato" do
 			expect(plato.class).to eq(Comida::Plato)
 		end
+
+		it "Comprobando clase del objeto plato" do
+			expect(plato.kind_of?(Comida::Plato)).to eq(true)
+		end
 	end
 end
 
