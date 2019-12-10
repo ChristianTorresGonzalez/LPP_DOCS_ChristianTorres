@@ -150,7 +150,37 @@ module Comida
     end
 
     def huella_nutricional
+      ienergia = 0
+      icarbono = 0
+      media = 0
+      recorrido = lista_alimentos.head
+      numero2 = lista_alimentos.calculo_emisiones_ei
+      size = 0
 
+      while recorrido != nil
+        numero1 = recorrido.value.calculo_valor_energetico
+
+        if numero1 < 670
+          ienergia = ienergia + 1.0
+        elsif numero1 <=830
+           ienergia = ienergia + 2.0
+        else
+           ienergia = ienergia + 3.0
+        end
+
+        recorrido = recorrido.next
+        size = size + 1.0
+      end
+
+      if numero2 < 800
+        icarbono = 1.0
+      elsif numero2 <= 1200
+        icarbono = 2.0
+      else
+        icarbono = 3.0
+      end
+
+      media = (ienergia/size) + (icarbono/size)
     end
   end
 end

@@ -409,5 +409,9 @@ RSpec.describe Comida::PlatoHija do
 		it "Comprobacion de metodo huella_nutricional para un plato" do
 			expect(plato_español).to respond_to(:huella_nutricional)
 		end
+
+		it "Comprobacion correcto funcionamiento de huella nutricional" do
+			expect(plato_vasco.huella_nutricional).to eq(1.5)
+		end
 	end
 end
