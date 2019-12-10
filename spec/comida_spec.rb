@@ -300,12 +300,6 @@ RSpec.describe Comida::Plato do
 			expect(Comida::Plato.ancestors).to eq([Comida::Plato, Object, Kernel, BasicObject])
 		end
 	end
-
-	context "Practica 9: Menú dietético"do
-		it "Comprobacion de metodo huella_nutricional para un plato" do
-			expect(plato).to respond_to(:huella_nutricional)
-		end
-	end
 end
 
 RSpec.describe Comida::PlatoHija do
@@ -408,6 +402,12 @@ RSpec.describe Comida::PlatoHija do
 
 		it "Prueba de enumeracion de platos con sort" do
 			expect(lista_platos.sort{|a, b| b <=> a}).to eq([plato_español,plato_vasco])
+		end
+	end
+
+	context "Practica 9: Menú dietético"do
+		it "Comprobacion de metodo huella_nutricional para un plato" do
+			expect(plato_español).to respond_to(:huella_nutricional)
 		end
 	end
 end

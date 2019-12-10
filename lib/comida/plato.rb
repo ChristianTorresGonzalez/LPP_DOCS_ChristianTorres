@@ -1,7 +1,5 @@
 module Comida
   class Plato
-    include Comparable
-
     attr_reader :nombre_plato, :lista_alimentos, :lista_cantidades
 
     def initialize(nombre,alimentos,cantidad)
@@ -150,6 +148,9 @@ module Comida
 
       formateo
     end
-    
+
+    def huella_nutricional
+
+    end
   end
 end
