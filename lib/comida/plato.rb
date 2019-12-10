@@ -1,25 +1,13 @@
 module Comida
   class Plato
+    include Comparable
+
     attr_reader :nombre_plato, :lista_alimentos, :lista_cantidades
 
     def initialize(nombre,alimentos,cantidad)
       @nombre_plato = nombre
       @lista_alimentos = alimentos
       @lista_cantidades = cantidad
-
-      # aux = Lista.new(nil,nil)
-      # i = 0
-      # while i < alimentos.length
-      #   aux.insert_muchos_head(alimentos)
-      # end
-      # @lista_alimentos = aux
-
-      # aux2 = Lista.new(nil,nil)
-      # i = 0
-      # while i < alimentos.length
-      #   aux2.insert_muchos_head(alimentos)
-      # end
-      # @lista_alimentos = aux2
     end
 
     def porcentaje_proteinas
@@ -162,5 +150,6 @@ module Comida
 
       formateo
     end
+    
   end
 end
