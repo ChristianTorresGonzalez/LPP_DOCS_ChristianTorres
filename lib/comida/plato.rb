@@ -1,13 +1,28 @@
+#
+# Autor::   Christian Torres Gonzalez
+# Web::     http://www.elcodigok.com.ar
+#
+# == Documentacion RDOC
+#
+# === Clase Plato
+#
+# Definición de la clase Plato con los metodos:
+# * metodo initialize
+#
+
 module Comida
   class Plato
     attr_reader :nombre_plato, :lista_alimentos, :lista_cantidades
 
+    # Metodo inicializar los atributos del Plato
     def initialize(nombre,alimentos,cantidad)
-      @nombre_plato = nombre
-      @lista_alimentos = alimentos
-      @lista_cantidades = cantidad
+      @nombre_plato = nombre          # Nombre del Plato
+      @lista_alimentos = alimentos    # Lista con los alimentos que forman el plato
+      @lista_cantidades = cantidad    # Lista con las cantidades que hay que usar de cada alimento
     end
 
+    # Metodo para calcular el porcentaje total de proteinas de todos los alimentos que se han
+    # usado para crear el plato
     def porcentaje_proteinas
       recorrido = lista_alimentos.head
       acumulador = 0
@@ -23,6 +38,8 @@ module Comida
       ((porcentaje * 100)/acumulador).round(2)
     end
 
+    # Metodo para calcular el porcentaje total de lipidos de todos los alimentos que se han
+    # usado para crear el plato
     def porcentaje_lipidos
       recorrido = lista_alimentos.head
       acumulador = 0
@@ -38,6 +55,8 @@ module Comida
       ((porcentaje * 100)/acumulador).round(2)
     end
 
+    # Metodo para calcular el porcentaje total de hidratos de carbono de todos los alimentos que se han
+    # usado para crear el plato
     def porcentaje_carbohidratos
       recorrido = lista_alimentos.head
       acumulador = 0
@@ -53,6 +72,8 @@ module Comida
       ((porcentaje * 100)/acumulador).round(2)
     end
 
+    # Calculo del valor calorico del plato en funcion de las proteinas,lipidos e hidratos de carbono
+    # que contienen los alimentos usados
     def calculo_valor_calorico_total
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
@@ -68,6 +89,7 @@ module Comida
       acumulador.round(2)
     end
 
+    # Metodo para formatear la salida de la cantidad de cada alimento con su correspondiente alimento
     def to_s
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
@@ -90,18 +112,22 @@ module Comida
 
     attr_reader :emisiones_diarias, :metros_terreno
 
+    # Definicion del metodo <=> utilizado para comparar la huella nutricional de platos
     def <=>(other)
-      comparando = [self.calculo_emisiones_diarias,self.calculo_metros_terreno]
-      comparador = [other.calculo_emisiones_diarias,other.calculo_metros_terreno]
+      comparando = self.huella_nutricional
+      comparador = other.huella_nutricional
       comparando <=> comparador
     end
 
+    # Al igual que en la clase padre, inicializacion de los atributos con los que va a trabajar
+    # la clase PlatoHija
     def initialize(nombre,alimentos,cantidad)
       super(nombre,alimentos,cantidad)
       @emisiones_diarias = 0
       @metros_terreno = 0
     end
 
+    # Metodo empleado para el calculo de las emisiones diarias de efecto invernadero
     def calculo_emisiones_diarias
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
@@ -116,6 +142,8 @@ module Comida
       @emisiones_diarias
     end
 
+    # Metodo empleado para el calculo de los metros de terreno utilizados para la
+    # elaboracion del plato
     def calculo_metros_terreno
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
@@ -130,6 +158,8 @@ module Comida
       @metros_terreno
     end
 
+    # Metodo para formatear la salida de la cantidad de gases de efecto invernadero de cada alimentos
+    #  ademas de los metros de terreno empleados
     def to_s
       recorrido = lista_alimentos.head
       cantidad = lista_cantidades.head
@@ -149,38 +179,30 @@ module Comida
       formateo
     end
 
+    # Metodo utilizado para el calculo del valor de la huella nutricional del plato, el cual
+    # se basa en el dato medio del calculo del valor calorico y el calculo de las emisiones
+    # de efecto invernadero
     def huella_nutricional
-      ienergia = 0
-      icarbono = 0
-      media = 0
-      recorrido = lista_alimentos.head
-      numero2 = lista_alimentos.calculo_emisiones_ei
-      size = 0
+      numero1 = self.calculo_valor_calorico_total
+      numero2 = self.calculo_emisiones_diarias
 
-      while recorrido != nil
-        numero1 = recorrido.value.calculo_valor_energetico
-
-        if numero1 < 670
-          ienergia = ienergia + 1.0
-        elsif numero1 <=830
-           ienergia = ienergia + 2.0
-        else
-           ienergia = ienergia + 3.0
-        end
-
-        recorrido = recorrido.next
-        size = size + 1.0
+      if numero1 < 670
+        ienergia = 1
+      elsif numero1 <=830
+         ienergia = 2
+      else
+         ienergia = 3
       end
 
       if numero2 < 800
-        icarbono = 1.0
+        icarbono = 1
       elsif numero2 <= 1200
-        icarbono = 2.0
+        icarbono = 2
       else
-        icarbono = 3.0
+        icarbono = 3
       end
 
-      media = (ienergia/size) + (icarbono/size)
+      media = (ienergia + icarbono)/2
     end
   end
 end

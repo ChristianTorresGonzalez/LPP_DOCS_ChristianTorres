@@ -1,0 +1,16 @@
+Tue, 17 Dec 2019 10:47:27 +0000
+./lib/comida/lista.rb	Tue, 10 Dec 2019 12:24:07 +0000
+./lib/comida/version.rb	Mon, 11 Nov 2019 09:59:47 +0000
+./lib/comida/food.rb	Wed, 27 Nov 2019 13:56:02 +0000
+./lib/comida/plato.rb	Tue, 17 Dec 2019 10:33:49 +0000
+./lib/comida.rb	Wed, 27 Nov 2019 13:56:02 +0000
+./Rakefile	Mon, 11 Nov 2019 09:59:47 +0000
+./README.md	Mon, 11 Nov 2019 10:51:09 +0000
+./Guardfile	Wed, 20 Nov 2019 13:12:23 +0000
+./Gemfile	Mon, 11 Nov 2019 09:59:47 +0000
+./Gemfile.lock	Wed, 20 Nov 2019 13:12:23 +0000
+./comida.gemspec	Wed, 20 Nov 2019 13:12:23 +0000
+./bin/console	Mon, 11 Nov 2019 09:59:47 +0000
+./bin/setup	Mon, 11 Nov 2019 09:59:47 +0000
+./spec/comida_spec.rb	Tue, 17 Dec 2019 10:09:15 +0000
+./spec/spec_helper.rb	Mon, 11 Nov 2019 09:59:47 +0000

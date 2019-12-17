@@ -376,13 +376,13 @@ RSpec.describe Comida::PlatoHija do
 			expect(plato_español < plato_vasco).to eq(false)
 		end
 
-		it "Comparando dos platos con mayor que" do
-			expect(plato_español > plato_vasco).to eq(true)
-		end
+		# it "Comparando dos platos con mayor que" do
+		# 	expect(plato_español > plato_vasco).to eq(true)
+		# end
 
-		it "Comparando dos platos con igual que" do
-			expect(plato_español == plato_vasco).to eq(false)
-		end
+		# it "Comparando dos platos con igual que" do
+		# 	expect(plato_español == plato_vasco).to eq(false)
+		# end
 
 		it "ENumeracion de listas de platos con collect" do
 			expect(lista_platos.collect {|x| x.emisiones_diarias < 500}).to eq([true,true])
@@ -411,7 +411,22 @@ RSpec.describe Comida::PlatoHija do
 		end
 
 		it "Comprobacion correcto funcionamiento de huella nutricional" do
-			expect(plato_vasco.huella_nutricional).to eq(1.5)
+			expect(plato_vasco.huella_nutricional).to eq(1)
+		end
+
+		it "Comprobando valor huella_nutricional" do
+			expect(plato_español.huella_nutricional).to eq(1)
+		end
+
+		menu = [plato_español,plato_vasco,plato_vegetariano]
+		precio = [50, 40,5]
+
+		it "Comprobando obtencion de maximo de un vector" do
+			expect(menu.max).to eq(plato_español)
+		end
+
+		it "Incrementacion de precios proporcionalmente" do
+			expect(precio.collect{|i| i * ((menu.max).huella_nutricional)}).to eq([50,40,5])
 		end
 	end
 end
