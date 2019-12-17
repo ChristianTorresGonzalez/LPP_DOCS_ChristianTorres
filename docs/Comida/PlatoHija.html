@@ -108,6 +108,8 @@
 
   <section class="description">
     
+<p>Clase <a href="PlatoHija.html"><code>PlatoHija</code></a> la cual vamos a utilizar para almacenar una las emisiones de efecto invernadero y el valor del terreno. Al ser una clase heredada, podremos acceder a los atributos de las clase padre</p>
+
   </section>
 
   
@@ -133,7 +135,7 @@
 
         <div class="method-description">
         
-        
+        <p>Variable para almacenar valor de efceto invernadero, variable para almacenar valor del terreno</p>
         
         </div>
       </div>
@@ -146,7 +148,7 @@
 
         <div class="method-description">
         
-        
+        <p>Variable para almacenar valor de efceto invernadero, variable para almacenar valor del terreno</p>
         
         </div>
       </div>
@@ -185,11 +187,11 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 149</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">cantidad</span>)
-  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">cantidad</span>)
-  <span class="ruby-ivar">@emisiones_diarias</span> = <span class="ruby-value">0</span>
-  <span class="ruby-ivar">@metros_terreno</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">cantidad</span>)   <span class="ruby-comment"># Llamada al contructor de la clase padre</span>
+  <span class="ruby-ivar">@emisiones_diarias</span> = <span class="ruby-value">0</span>             <span class="ruby-comment"># Variable para almacenar valor de efceto invernadero</span>
+  <span class="ruby-ivar">@metros_terreno</span> = <span class="ruby-value">0</span>                <span class="ruby-comment"># variable para almacenar valor del terreno</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -228,7 +230,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 141</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">comparando</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">huella_nutricional</span>
   <span class="ruby-identifier">comparador</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">huella_nutricional</span>
@@ -263,7 +265,7 @@
 
           
           <div class="method-source-code" id="calculo_emisiones_diarias-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 131</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_emisiones_diarias</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">cantidad</span> = <span class="ruby-identifier">lista_cantidades</span>.<span class="ruby-identifier">head</span>
@@ -306,7 +308,7 @@
 
           
           <div class="method-source-code" id="calculo_metros_terreno-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 147</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 172</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_metros_terreno</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">cantidad</span> = <span class="ruby-identifier">lista_cantidades</span>.<span class="ruby-identifier">head</span>
@@ -349,7 +351,7 @@
 
           
           <div class="method-source-code" id="huella_nutricional-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 185</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 210</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">huella_nutricional</span>
   <span class="ruby-identifier">numero1</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">calculo_valor_calorico_total</span>
   <span class="ruby-identifier">numero2</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">calculo_emisiones_diarias</span>
@@ -404,7 +406,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 163</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 188</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">cantidad</span> = <span class="ruby-identifier">lista_cantidades</span>.<span class="ruby-identifier">head</span>

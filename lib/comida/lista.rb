@@ -1,11 +1,41 @@
+# Autor:: Christian Torres Gonzalez
+# Universidad de La laguna
+# Lenguajes y Paradigmas de Programacion
+#
+# == Documentacion RDOC
+#
+# === Clase Lista
+#
+# Definición de la clase Lista con los metodos:
+# * metodo initialize
+# * each
+# * insert_tail
+# * isnert_head
+# * insert_muchos_head
+# * insert_muchos_tail
+# * extract_head
+# * extract_tail
+# * calculo_emisiones_ei
+# * calculo_emisiones_ei_anuales
+# * calculo_terreno
+#
+
 module Comida
 
+    # Estructura utilizada para la lista, es decir, cada lista va a contener un atributovalue que va
+    # a ser el alimento que se va a utilizar, y los atributos next y prev para poder moverse por la lista
     Nodo = Struct.new(:value, :next, :prev)
 
+    # Clase utilizada para almacenar un conjunto de alimetnos que vamos a unir para formar un plato
     class Lista
       include Enumerable
+
+      # Variable utilizada para trabajar con la lista por delante,
+      # Variable utilizada para trabajar con la lista por detras
       attr_reader :head, :tail
 
+      # Metodo del Enumerable para poder moverse por la lista e implementar metodos como collect
+      # sort,select min, max,
       def each
         inicio = head
         while inicio != nil
@@ -15,11 +45,13 @@ module Comida
         end
       end
 
+      # Metodo para inizializar los atributos de la clase, que en este caso son a nil
       def initialize
-        @head = nil
-        @tail = nil
+        @head = nil   # Variable utilizada para trabajar con la lista por delante
+        @tail = nil   # Variable utilizada para trabajar con la lista por detras
       end
 
+      # Metodo utilizado para insertar datos en la lista por la cola
       def insert_tail(value)
         if (@head == nil && @tail == nil) then
           nodo = Nodo.new(value, nil, nil)
@@ -32,6 +64,7 @@ module Comida
         end
       end
 
+      # Metodo utilizado para insertar datos en la lista por la cabeza por delante
       def insert_head(value)
         if (@head == nil && @tail == nil) then
           nodo = Nodo.new(value, nil, nil)
@@ -44,6 +77,7 @@ module Comida
         end
       end
 
+      # Metodo utilizado para insertar mas de un dato a la vez en la lista por la cabeza
       def insert_muchos_head(value)
         i = 0
 
@@ -53,6 +87,7 @@ module Comida
         end
       end
 
+      # Metodo utilizado para insertar mas de un dato a la vez en la lista por la cola
       def insert_muchos_tail(value)
         i = 0
 
@@ -62,6 +97,8 @@ module Comida
         end
       end
 
+      # Metodo utilizado para extraer elementos de la lista por la cabeza, simplemente tenemos
+      # que asignar la cabeza al siguiente elemento del que esta apuntando actualmente
       def extract_head()
         if (@head != nil && @tail != nil) then
           if (@head == @tail) then
@@ -74,6 +111,8 @@ module Comida
         end
       end
 
+      # Metodo utilizado para extraer elementos de la lista por la cola, simplemente tenemos
+      # que asignar la cola al anterior elemento del que esta apuntando actualmente
       def extract_tail()
         if (@head != nil && @tail != nil) then
           if (@head == @tail) then
@@ -86,6 +125,8 @@ module Comida
         end
       end
 
+      # Metodo empleado para el calculo de las emisiones de efecto invernadero. Para ello solo tenemos
+      # que recorrer cada elemetno de la lista e ir sumando el valor de gei
       def calculo_emisiones_ei
         i = 0
         suma = 0
@@ -100,10 +141,15 @@ module Comida
         return suma
       end
 
+      # Metodo para calcular las emisinoes de efecto invernadero anuales. SOlo tenemos que
+      # obtener el valor de las emisione de efecto invernadero en un dia y multiplicarlo por 365
       def calculo_emisiones_ei_anuales
         return self.calculo_emisiones_ei * 365
       end
 
+      # Metodo para calcular el terreno empleado en funcion de los alimetnos de la lista.
+      # Para ello solo tenemos que recorrer la lista e ir sumando el valor del terreno
+      # de cada alimento
       def calculo_terreno(lista)
         i = 0
         suma = 0
@@ -115,14 +161,7 @@ module Comida
           i += 1
         end
 
-        return suma
+        suma
       end
-
-      def enumerar
-        i = 0
-
-        while i < value.length
-      end
-    end
   end
 end

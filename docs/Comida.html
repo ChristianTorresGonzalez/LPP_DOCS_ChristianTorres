@@ -58,6 +58,10 @@
 
   <ul class="link-list" role="directory">
     <li><a href="#module-Comida-label-Documentacion+RDOC">Documentacion RDOC</a>
+    <li><a href="#module-Comida-label-Clase+Comida">Clase Comida</a>
+    <li><a href="#module-Comida-label-Documentacion+RDOC">Documentacion RDOC</a>
+    <li><a href="#module-Comida-label-Clase+Lista">Clase Lista</a>
+    <li><a href="#module-Comida-label-Documentacion+RDOC">Documentacion RDOC</a>
     <li><a href="#module-Comida-label-Clase+Plato">Clase Plato</a>
   </ul>
 </div>
@@ -81,10 +85,69 @@
     <dl class="rdoc-list note-list"><dt>Autor
 <dd>
 <p>Christian Torres Gonzalez</p>
-</dd><dt>Web
-<dd>
-<p><a href="http://www.elcodigok.com.ar">www.elcodigok.com.ar</a></p>
 </dd></dl>
+
+<p>Universidad de La laguna Lenguajes y Paradigmas de Programacion</p>
+
+<h2 id="module-Comida-label-Documentacion+RDOC">Documentacion RDOC<span><a href="#module-Comida-label-Documentacion+RDOC">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="module-Comida-label-Clase+Comida">Clase <a href="Comida/Comida.html"><code>Comida</code></a><span><a href="#module-Comida-label-Clase+Comida">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Definición de la clase <a href="Comida/Comida.html"><code>Comida</code></a> con los metodos:</p>
+<ul><li>
+<p>metodo initialize</p>
+</li><li>
+<p>&lt;=&gt;</p>
+</li><li>
+<p>to_s</p>
+</li><li>
+<p>calculo_valor_energetico</p>
+</li><li>
+<p>impacto_ambiental_hombre</p>
+</li><li>
+<p>impacto_ambiental_mujer</p>
+</li></ul>
+<dl class="rdoc-list note-list"><dt>Autor
+<dd>
+<p>Christian Torres Gonzalez</p>
+</dd></dl>
+
+<p>Universidad de La laguna Lenguajes y Paradigmas de Programacion</p>
+
+<h2 id="module-Comida-label-Documentacion+RDOC">Documentacion RDOC<span><a href="#module-Comida-label-Documentacion+RDOC">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="module-Comida-label-Clase+Lista">Clase <a href="Comida/Lista.html"><code>Lista</code></a><span><a href="#module-Comida-label-Clase+Lista">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Definición de la clase <a href="Comida/Lista.html"><code>Lista</code></a> con los metodos:</p>
+<ul><li>
+<p>metodo initialize</p>
+</li><li>
+<p>each</p>
+</li><li>
+<p>insert_tail</p>
+</li><li>
+<p>isnert_head</p>
+</li><li>
+<p>insert_muchos_head</p>
+</li><li>
+<p>insert_muchos_tail</p>
+</li><li>
+<p>extract_head</p>
+</li><li>
+<p>extract_tail</p>
+</li><li>
+<p>calculo_emisiones_ei</p>
+</li><li>
+<p>calculo_emisiones_ei_anuales</p>
+</li><li>
+<p>calculo_terreno</p>
+</li></ul>
+<dl class="rdoc-list note-list"><dt>Autor
+<dd>
+<p>Christian Torres Gonzalez</p>
+</dd></dl>
+
+<p>Universidad de La laguna Lenguajes y Paradigmas de Programacion</p>
 
 <h2 id="module-Comida-label-Documentacion+RDOC">Documentacion RDOC<span><a href="#module-Comida-label-Documentacion+RDOC">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
@@ -93,6 +156,31 @@
 <p>Definición de la clase <a href="Comida/Plato.html"><code>Plato</code></a> con los metodos:</p>
 <ul><li>
 <p>metodo initialize</p>
+</li><li>
+<p>porcentaje_proteinas</p>
+</li><li>
+<p>porcentaje_lipidos</p>
+</li><li>
+<p>porcentaje_carbohidratos</p>
+</li><li>
+<p>calculo_valor_calorico_total</p>
+</li><li>
+<p>to_s</p>
+</li></ul>
+
+<p>Definicion de la clase PlatoHIja con metodos:</p>
+<ul><li>
+<p>initialize</p>
+</li><li>
+<p>&lt;=&gt;</p>
+</li><li>
+<p>calculo_emisiones_diarias</p>
+</li><li>
+<p>calculo_metros_terreno</p>
+</li><li>
+<p>to_s</p>
+</li><li>
+<p>huella_nutricional</p>
 </li></ul>
 
   </section>
@@ -112,12 +200,12 @@
       
         <dt id="Nodo">Nodo
         
-        <dd>
+        <dd><p>Estructura utilizada para la lista, es decir, cada lista va a contener un atributovalue que va a ser el alimento que se va a utilizar, y los atributos next y prev para poder moverse por la lista</p>
         
       
         <dt id="VERSION">VERSION
         
-        <dd>
+        <dd><p>Constante para indicar version</p>
         
       
       </dl>

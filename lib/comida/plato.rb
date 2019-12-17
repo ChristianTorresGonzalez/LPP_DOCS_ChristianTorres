@@ -1,6 +1,6 @@
-#
 # Autor::   Christian Torres Gonzalez
-# Web::     http://www.elcodigok.com.ar
+# Universidad de La laguna
+# Lenguajes y Paradigmas de Programacion
 #
 # == Documentacion RDOC
 #
@@ -8,10 +8,29 @@
 #
 # Definición de la clase Plato con los metodos:
 # * metodo initialize
+# * porcentaje_proteinas
+# * porcentaje_lipidos
+# * porcentaje_carbohidratos
+# * calculo_valor_calorico_total
+# * to_s
+#
+#
+# Definicion de la clase PlatoHIja con metodos:
+# * initialize
+# * <=>
+# * calculo_emisiones_diarias
+# * calculo_metros_terreno
+# * to_s
+# * huella_nutricional
 #
 
+
 module Comida
+  # Clase Plato la cual vamos a utilizar para almacenar una lista de alimentos que va a ser la lista
+  # que utilizamos para almacenar los alimentos del plato y la otra lista que es la de cantidades
+  # utilizadas para cada alimento
   class Plato
+    # Nombre del Plato, Lista con los alimentos que forman el plato, Lista con las cantidades que hay que usar de cada alimento
     attr_reader :nombre_plato, :lista_alimentos, :lista_cantidades
 
     # Metodo inicializar los atributos del Plato
@@ -107,9 +126,15 @@ module Comida
     end
   end
 
+
+  # Clase PlatoHija la cual vamos a utilizar para almacenar una las emisiones de efecto invernadero
+  # y el valor del terreno. Al ser una clase heredada, podremos acceder a los atributos de las clase
+  # padre
   class PlatoHija < Plato
     include Comparable
 
+    # Variable para almacenar valor de efceto invernadero,
+    # variable para almacenar valor del terreno
     attr_reader :emisiones_diarias, :metros_terreno
 
     # Definicion del metodo <=> utilizado para comparar la huella nutricional de platos
@@ -122,9 +147,9 @@ module Comida
     # Al igual que en la clase padre, inicializacion de los atributos con los que va a trabajar
     # la clase PlatoHija
     def initialize(nombre,alimentos,cantidad)
-      super(nombre,alimentos,cantidad)
-      @emisiones_diarias = 0
-      @metros_terreno = 0
+      super(nombre,alimentos,cantidad)   # Llamada al contructor de la clase padre
+      @emisiones_diarias = 0             # Variable para almacenar valor de efceto invernadero
+      @metros_terreno = 0                # variable para almacenar valor del terreno
     end
 
     # Metodo empleado para el calculo de las emisiones diarias de efecto invernadero
@@ -190,7 +215,7 @@ module Comida
         ienergia = 1
       elsif numero1 <=830
          ienergia = 2
-      else 
+      else
          ienergia = 3
       end
 

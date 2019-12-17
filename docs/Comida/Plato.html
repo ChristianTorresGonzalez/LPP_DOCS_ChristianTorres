@@ -97,6 +97,8 @@
 
   <section class="description">
     
+<p>Clase <a href="Plato.html"><code>Plato</code></a> la cual vamos a utilizar para almacenar una lista de alimentos que va a ser la lista que utilizamos para almacenar los alimentos del plato y la otra lista que es la de cantidades utilizadas para cada alimento</p>
+
   </section>
 
   
@@ -122,7 +124,7 @@
 
         <div class="method-description">
         
-        
+        <p>Nombre del <a href="Plato.html"><code>Plato</code></a>, <a href="Lista.html"><code>Lista</code></a> con los alimentos que forman el plato, <a href="Lista.html"><code>Lista</code></a> con las cantidades que hay que usar de cada alimento</p>
         
         </div>
       </div>
@@ -135,7 +137,7 @@
 
         <div class="method-description">
         
-        
+        <p>Nombre del <a href="Plato.html"><code>Plato</code></a>, <a href="Lista.html"><code>Lista</code></a> con los alimentos que forman el plato, <a href="Lista.html"><code>Lista</code></a> con las cantidades que hay que usar de cada alimento</p>
         
         </div>
       </div>
@@ -148,7 +150,7 @@
 
         <div class="method-description">
         
-        
+        <p>Nombre del <a href="Plato.html"><code>Plato</code></a>, <a href="Lista.html"><code>Lista</code></a> con los alimentos que forman el plato, <a href="Lista.html"><code>Lista</code></a> con las cantidades que hay que usar de cada alimento</p>
         
         </div>
       </div>
@@ -182,7 +184,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">alimentos</span>,<span class="ruby-identifier">cantidad</span>)
   <span class="ruby-ivar">@nombre_plato</span> = <span class="ruby-identifier">nombre</span>          <span class="ruby-comment"># Nombre del Plato</span>
   <span class="ruby-ivar">@lista_alimentos</span> = <span class="ruby-identifier">alimentos</span>    <span class="ruby-comment"># Lista con los alimentos que forman el plato</span>
@@ -225,7 +227,7 @@
 
           
           <div class="method-source-code" id="calculo_valor_calorico_total-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_valor_calorico_total</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">cantidad</span> = <span class="ruby-identifier">lista_cantidades</span>.<span class="ruby-identifier">head</span>
@@ -269,7 +271,7 @@
 
           
           <div class="method-source-code" id="porcentaje_carbohidratos-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">porcentaje_carbohidratos</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">acumulador</span> = <span class="ruby-value">0</span>
@@ -313,7 +315,7 @@
 
           
           <div class="method-source-code" id="porcentaje_lipidos-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">porcentaje_lipidos</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">acumulador</span> = <span class="ruby-value">0</span>
@@ -357,7 +359,7 @@
 
           
           <div class="method-source-code" id="porcentaje_proteinas-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 26</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">porcentaje_proteinas</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">acumulador</span> = <span class="ruby-value">0</span>
@@ -401,7 +403,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 93</span>
+            <pre><span class="ruby-comment"># File lib/comida/plato.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">recorrido</span> = <span class="ruby-identifier">lista_alimentos</span>.<span class="ruby-identifier">head</span>
   <span class="ruby-identifier">cantidad</span> = <span class="ruby-identifier">lista_cantidades</span>.<span class="ruby-identifier">head</span>

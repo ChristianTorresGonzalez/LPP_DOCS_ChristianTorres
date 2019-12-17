@@ -93,8 +93,6 @@
     
     <li ><a href="#method-i-each">#each</a>
     
-    <li ><a href="#method-i-enumerar">#enumerar</a>
-    
     <li ><a href="#method-i-extract_head">#extract_head</a>
     
     <li ><a href="#method-i-extract_tail">#extract_tail</a>
@@ -120,6 +118,8 @@
 
   <section class="description">
     
+<p>Clase utilizada para almacenar un conjunto de alimetnos que vamos a unir para formar un plato</p>
+
   </section>
 
   
@@ -145,7 +145,7 @@
 
         <div class="method-description">
         
-        
+        <p>Variable utilizada para trabajar con la lista por delante, Variable utilizada para trabajar con la lista por detras</p>
         
         </div>
       </div>
@@ -158,7 +158,7 @@
 
         <div class="method-description">
         
-        
+        <p>Variable utilizada para trabajar con la lista por delante, Variable utilizada para trabajar con la lista por detras</p>
         
         </div>
       </div>
@@ -186,16 +186,16 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para inizializar los atributos de la clase, que en este caso son a nil</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
-  <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
-  <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>   <span class="ruby-comment"># Variable utilizada para trabajar con la lista por delante</span>
+  <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>   <span class="ruby-comment"># Variable utilizada para trabajar con la lista por detras</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -228,13 +228,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo empleado para el calculo de las emisiones de efecto invernadero. Para ello solo tenemos que recorrer cada elemetno de la lista e ir sumando el valor de gei</p>
           
           
 
           
           <div class="method-source-code" id="calculo_emisiones_ei-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 89</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 130</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_emisiones_ei</span>
   <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
   <span class="ruby-identifier">suma</span> = <span class="ruby-value">0</span>
@@ -271,13 +271,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para calcular las emisinoes de efecto invernadero anuales. SOlo tenemos que obtener el valor de las emisione de efecto invernadero en un dia y multiplicarlo por 365</p>
           
           
 
           
           <div class="method-source-code" id="calculo_emisiones_ei_anuales-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 103</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_emisiones_ei_anuales</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">calculo_emisiones_ei</span> <span class="ruby-operator">*</span> <span class="ruby-value">365</span>
 <span class="ruby-keyword">end</span></pre>
@@ -304,13 +304,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para calcular el terreno empleado en funcion de los alimetnos de la lista. Para ello solo tenemos que recorrer la lista e ir sumando el valor del terreno de cada alimento</p>
           
           
 
           
           <div class="method-source-code" id="calculo_terreno-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 153</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calculo_terreno</span>(<span class="ruby-identifier">lista</span>)
   <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
   <span class="ruby-identifier">suma</span> = <span class="ruby-value">0</span>
@@ -322,7 +322,7 @@
     <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">suma</span>
+  <span class="ruby-identifier">suma</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -347,55 +347,19 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo del Enumerable para poder moverse por la lista e implementar metodos como collect sort,select min, max,</p>
           
           
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 9</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
   <span class="ruby-identifier">inicio</span> = <span class="ruby-identifier">head</span>
   <span class="ruby-keyword">while</span> <span class="ruby-identifier">inicio</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">inicio</span>.<span class="ruby-identifier">value</span>
 
     <span class="ruby-identifier">inicio</span> = <span class="ruby-identifier">inicio</span>.<span class="ruby-identifier">next</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-enumerar" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">enumerar</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="enumerar-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 121</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enumerar</span>
-    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
-
-    <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">length</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -421,13 +385,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para extraer elementos de la lista por la cabeza, simplemente tenemos que asignar la cabeza al siguiente elemento del que esta apuntando actualmente</p>
           
           
 
           
           <div class="method-source-code" id="extract_head-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_head</span>()
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
     <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>) <span class="ruby-keyword">then</span>
@@ -462,13 +426,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para extraer elementos de la lista por la cola, simplemente tenemos que asignar la cola al anterior elemento del que esta apuntando actualmente</p>
           
           
 
           
           <div class="method-source-code" id="extract_tail-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_tail</span>()
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
     <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@tail</span>) <span class="ruby-keyword">then</span>
@@ -503,13 +467,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para insertar datos en la lista por la cabeza por delante</p>
           
           
 
           
           <div class="method-source-code" id="insert_head-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 35</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
     <span class="ruby-identifier">nodo</span> = <span class="ruby-constant">Nodo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
@@ -544,13 +508,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para insertar mas de un dato a la vez en la lista por la cabeza</p>
           
           
 
           
           <div class="method-source-code" id="insert_muchos_head-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 47</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_muchos_head</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
 
@@ -582,13 +546,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para insertar mas de un dato a la vez en la lista por la cola</p>
           
           
 
           
           <div class="method-source-code" id="insert_muchos_tail-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 56</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_muchos_tail</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
 
@@ -620,13 +584,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo utilizado para insertar datos en la lista por la cola</p>
           
           
 
           
           <div class="method-source-code" id="insert_tail-source">
-            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/comida/lista.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
     <span class="ruby-identifier">nodo</span> = <span class="ruby-constant">Nodo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
