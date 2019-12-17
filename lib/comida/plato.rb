@@ -190,7 +190,7 @@ module Comida
         ienergia = 1
       elsif numero1 <=830
          ienergia = 2
-      else
+      else 
          ienergia = 3
       end
 
